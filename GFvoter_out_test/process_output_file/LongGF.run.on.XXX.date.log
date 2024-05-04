@@ -1,0 +1,36 @@
+sorted.bam ../../gencode.v22.chr_patch_hapl_scaff.annotation.gtf 100 50 100 0
+Open sam file (sorted.bam).
+Read sam file (sorted.bam) for scanning multiple-mapped reads. 
+Handle =0 >> multi_map_reads.size=0 read_len_map.size=0 Time-elapsed=0
+Time consumed to read bam: 0.00s
+For all reads: reads=3/3(100.00) bases=4606/5584(82.49) ins=112(2.01) del=104(1.86)
+	 N10: 2507
+	 N20: 2507
+	 N30: 2507
+	 N40: 2507
+	 N50: 2227
+	 N60: 2227
+	 N70: 2227
+	 N80: 2227
+	 N90: 850
+For mapped reads: bases=4606/5584(82.49) ins=112(2.01) del=104(1.86)
+	 N10: 2507
+	 N20: 2507
+	 N30: 2507
+	 N40: 2507
+	 N50: 2227
+	 N60: 2227
+	 N70: 2227
+	 N80: 2227
+	 N90: 850
+
+# reads with multipe mapping = 1=2/3(66.67)
+Open sam file (sorted.bam).
+Read sam file (sorted.bam) for gene fusion detection.
+Handle =0 _fg_cand.size()=0 Time-elapsed=0
+Time consumed to read bam: 0.01s
+Finish _fg_cand[_gene_pair=1
+Potential_fusion: 1 1
+GF	MRPL54:CCDC144NL 1 1 supporting reads=1/1 3762817:1 20865510:1 chr19:3762817 0/1:4:1 chr17:20865510 0/1:4:1
+	3762817(-chr19:3762704-3762817/2d387943-07fa-a9bd-b012-99806f2aced1:2112-2226)1 20865510(+chr17:20863394-20865510/0-2113)1
+SumGF	MRPL54:CCDC144NL 1 chr19:3762817 chr17:20865510
