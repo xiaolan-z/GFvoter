@@ -8,8 +8,6 @@ def initialization_parameters():
                         help='input_path')
     parser.add_argument('-t', action='store', dest='datatype',
                          type=str, required=True, help='datatype')
-    # parser.add_argument('-po', action='store', dest='process_output_file', type=str, required=False, default="process_output_file",
-    #                     help='process_output_file_path.')   
     parser.add_argument('-o', action='store', dest='output_file', type=str, required=False, default="./GFvoter_out/",
                         help='output directory.')  
     parser.add_argument('-s', action='store', dest='choice', type=str, required=False, default="real",
@@ -29,15 +27,14 @@ def run_commands(commands):
 args = initialization_parameters()
 input_fastq_gz=args.input_fastq_gz
 datatype=args.datatype
-# process_output_file=args.process_output_file
+
 output_file=args.output_file
 if output_file[-1]!='/':
     output_file+='/'
 choice=args.choice
 
 
-# os.makedirs(process_output_file, exist_ok=True)
-# os.chdir('./process_output_file')
+
 os.makedirs(output_file+'process_output_file/', exist_ok=True)
 os.chdir(output_file+'process_output_file/')
 
@@ -60,7 +57,7 @@ if datatype=="nanopore":
      ]
 
 commands2=[
-         f"../../JAFFA/tools/bin/bpipe run  ../../JAFFA/JAFFAL.groovy {input_fastq_gz}"
+         f"../../JAFFA-version-2.3/tools/bin/bpipe run  ../../JAFFA-version-2.3/JAFFAL.groovy {input_fastq_gz}"
          ]
 
 run_commands(commands)
