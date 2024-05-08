@@ -8,19 +8,32 @@ The input should be a fastq.gz file (PacBio Iso-Seq, Nanopore, or mixed platform
 
 
 ## Installation
-    GFvoter can be used on the linux system.
+GFvoter can be used on the linux system.
 ### Prerequisites
     conda install -c bioconda minimap2=2.24 samtools=1.9 winnowmap=2.03 -y
     conda install -c bioconda longgf
 ### Download the GFvoter package
     git clone https://github.com/xiaolan-z/GFvoter.git 
     cd ./GFvoter
+### Download GTF file, hg38.fa and JAFFAL package 
+    wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_22/gencode.v22.chr_patch_hapl_scaff.annotation.gtf.gz
+    gunzip gencode.v22.chr_patch_hapl_scaff.annotation.gtf.gz
+    wget https://github.com/Oshlack/JAFFA/releases/download/version-2.3/JAFFA-version-2.3.tar.gz
+    tar -zxvf JAFFA-version-2.3.tar.gz
+    cd ./JAFFA-version-2.3
+    wget https://s3-eu-west-1.amazonaws.com/pfigshare-u-files/25410494/JAFFA_REFERENCE_FILES_HG38_GENCODE22.V2.tar.gz
+    tar -zxvf JAFFA_REFERENCE_FILES_HG38_GENCODE22.V2.tar.gz
+    ./install_linux64.sh
+    cp ./hg38.fa ../
+    
 ## General usage
 GFvoter can be applied with built-in Human reference genome (hg3.fa) and annotation (gencode.v22.chr_patch_hapl_scaff.annotation.gtf):
+
     python GFvoter.py  -i <path_to_directory with fastq files>/*.gz -s <real or simulate> -t <pacbio or nanopore> -o GFvoter_out/
 
 A test dataset is available to verify successful installation:
-    python GFvoter.py  -i ../../testdata.fastq.gz -s simulate -t pacbio -o GFvoter_out_test/
+
+    python GFvoter.py  -i <path to GFvoter>/testdata.fastq.gz -s simulate -t pacbio -o GFvoter_out_test/
 
 optional arguments:
     -i   Input **.fastq.gz file
