@@ -36,6 +36,7 @@ A test dataset is available to verify successful installation:
     python GFvoter.py  -i <path to GFvoter>/testdata.fastq.gz -s simulate -t pacbio -o GFvoter_out_test/
 
 optional arguments:
+
     -i     Input **.fastq.gz file
     -t     Input read type(pacbio,nanopore)
     -s     The source of input read (real,simulate)
@@ -51,6 +52,7 @@ optional arguments:
 
 ## Output files
 The output directory includes:
+
     process_output_file/   Intermediate files during running GFvoter.py.
     reported_fusions.txt   A list of gene fusions reported by GFvoter from input read,including gene fusion,supporting_reads and breakpoint positions.
 
