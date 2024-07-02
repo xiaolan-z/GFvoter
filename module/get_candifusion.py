@@ -67,7 +67,7 @@ def fusion_record(align_file,fusion_records):
          lines = file.readlines()
          gene_info = eval(gene_data.read())
          data_dict = defaultdict(list)
-         first_elements = [line.split()[0] for line in lines[1:]]  # 获取每行的第一个元素
+         first_elements = [line.split()[0] for line in lines[1:]]  
          for line, key in zip(lines[1:], first_elements):
              elements = line.split()
              read_chromosome=elements[1]
@@ -80,12 +80,12 @@ def fusion_record(align_file,fusion_records):
              b=elements[9]
              if a=='secondary':
                 continue
-             elif first_elements.count(key) > 1:  # 如果第一个元素出现的次数大于1
+             elif first_elements.count(key) > 1:  
                 genex,geney=get_gene(read_chromosome, read_start_pos, read_end_pos, gene_info)
                 if genex !='':
-                   data_dict[key].append([genex,read_chromosome, read_start_pos, read_end_pos,geney,left_soft,right_soft,rl,a,b])  # 则将该行其他元素组成的列表添加到对应的值中
-    specified_strings1 = ['primary', 'not_supplementary']  # 第一组指定的两个字符串
-    specified_strings2 = ['primary', 'supplementary']  # 第二组指定的两个字符串
+                   data_dict[key].append([genex,read_chromosome, read_start_pos, read_end_pos,geney,left_soft,right_soft,rl,a,b])  
+    specified_strings1 = ['primary', 'not_supplementary']  
+    specified_strings2 = ['primary', 'supplementary']  
     new_dict = {}
     for key, value in data_dict.items():
         specified_strings1_values = [item for item in value if item[-2:] == specified_strings1]
@@ -98,7 +98,7 @@ def fusion_record(align_file,fusion_records):
            for i, pair in enumerate(paired_values):
                new_key = f"{key}_{i+1}"
                new_dict[new_key] = list(pair)
-# 打印字典
+
     with open(fusion_records, 'w') as output_file:
          for key, values in new_dict.items():
              new_values = [item[:-2] for item in values]
@@ -159,3 +159,21 @@ with open(fusion_records, 'r') as f_in:
             new_element = elements[1] + ":" + elements[9]
             if new_element not in total_candifusions:
                total_candifusions.add(new_element)
+
+minimap2_results=set()
+winnowmap_results=set()
+with open(fusion_records1, 'r') as f:
+     for line in f:
+         elements = line.strip().split()
+         if len(elements) >= 10 and elements[1] != elements[9]:
+            new_element = elements[1] + ":" + elements[9]
+            if new_element not in minimap2_results:
+               minimap2_results.add(new_element)
+with open(fusion_records2, 'r') as f:
+     for line in f:
+         elements = line.strip().split()
+         if len(elements) >= 10 and elements[1] != elements[9]:
+            new_element = elements[1] + ":" + elements[9]
+            if new_element not in winnowmap_results:
+               winnowmap_results.add(new_element)
+

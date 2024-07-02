@@ -36,21 +36,23 @@ A test dataset is available to verify successful installation:
     python GFvoter.py  -i <path to GFvoter>/testdata.fastq.gz -s simulate -t pacbio -o GFvoter_out_test/
 
 optional arguments:
-    -i   Input **.fastq.gz file
-    -t   Input read type(pacbio,nanopore)
-    -s   The source of input read (real,simulate)
-    -o   The directory path to save the result files of GFvoter
-    -n   Minimal reads supporting an gene fusion event. Default=3  
-    -l   The minimum overlap length between two aligments of one read. Default=15
-    -el  The minimum exon overlap length of an alignment record against the reference genome. Default=400
-    -sn  The number of secondary alignment of a read. Default=0
-    -rp  The propotion of one alignment to the . Default=0.75
-    -gp  The propotion of one alignment to the genome. Default=0.3
+    -i     Input **.fastq.gz file
+    -t     Input read type(pacbio,nanopore)
+    -s     The source of input read (real,simulate)
+    -o     The directory path to save the result files of GFvoter
+    -n     Minimal reads supporting an gene fusion event. Default=3  
+    -l     The minimum overlap length between two aligments of one read. Default=15
+    -el    The minimum exon overlap length of an alignment record against the reference genome. Default=400
+    -sn    The number of secondary alignment of a read. Default=0
+    -rp    The propotion of one alignment to the . Default=0.75
+    -gp    The propotion of one alignment to the genome. Default=0.3
+    -score The minimum score for fusion gene. Default=400
+    -poll  The minimum number of votes for fusion gene. Default=6
 
 ## Output files
 The output directory includes:
     process_output_file/   Intermediate files during running GFvoter.py.
-    reported_fusions.txt   A list of gene fusions reported by GFvoter from input read.
+    reported_fusions.txt   A list of gene fusions reported by GFvoter from input read,including gene fusion,supporting_reads and breakpoint positions.
 
 
 

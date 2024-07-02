@@ -1,6 +1,7 @@
 import argparse
 import subprocess
 import os
+from collections import Counter
 
 def initialization_parameters():
     parser = argparse.ArgumentParser()
@@ -27,12 +28,10 @@ def run_commands(commands):
 args = initialization_parameters()
 input_fastq_gz=args.input_fastq_gz
 datatype=args.datatype
-
 output_file=args.output_file
 if output_file[-1]!='/':
     output_file+='/'
 choice=args.choice
-
 
 
 os.makedirs(output_file+'process_output_file/', exist_ok=True)
@@ -57,7 +56,7 @@ if datatype=="nanopore":
      ]
 
 commands2=[
-         f"../../JAFFA-version-2.3/tools/bin/bpipe run  ../../JAFFA-version-2.3/JAFFAL.groovy {input_fastq_gz}"
+         f"../../JAFFA/tools/bin/bpipe run  ../../JAFFA/JAFFAL.groovy {input_fastq_gz}"
          ]
 
 run_commands(commands)
@@ -66,26 +65,68 @@ run_commands(commands2)
 
 l="longgf_results.txt"
 LongGF_fusions=[]
+LongGF_gene=[]
 with open(l,"r") as f:
      lines=f.readlines()
+     selected_columns=[1,2,3,4]
      for line in lines:
-         columns=line.strip().split()
-         if len(columns)>=2:
-            LongGF_fusions.append(columns[1])
-
+         elements=line.strip().split()
+         if len(elements)>=2:
+            selected_elements = [elements[i] for i in selected_columns]
+            element1=selected_elements[0]
+            element2=selected_elements[1]
+            element3=selected_elements[2].split(":")[0]
+            element4=selected_elements[2].split(":")[1]
+            element5=selected_elements[3].split(":")[0]
+            element6=selected_elements[3].split(":")[1]
+            fusion=[element1,element2,element3,element4,element5,element6]
+            LongGF_fusions.append(fusion)     
+            LongGF_gene.append(element1)
 csvfile="jaffa_results.csv"
-    # 存储第二列数据的空列表
 JAFFAL_fusions = []
+JAFFAL_gene=[]
 with open(csvfile,'r') as f:
     lines=f.readlines()
+    selected_columns1=[1,10,2,3,5,6]
     for line in lines[1:]:
         elements=line.strip().split(',')
         if len(elements)>=2:
-            JAFFAL_fusions.append(elements[1])
+            selected_elements = [elements[i] for i in selected_columns1]
+            JAFFAL_fusions.append(selected_elements)
+            JAFFAL_gene.append(selected_elements[0])
 
-common_fusion=[]
-for fusion in JAFFAL_fusions:
-    fusion1, fusion2 = fusion.split(':')
-    fusion_reversed = fusion2 + ":" + fusion1  # 融合基因前后顺序反转
-    if fusion in LongGF_fusions or fusion_reversed in LongGF_fusions:
-       common_fusion.append(fusion)
+def find_duplicates(lst):
+    counts = Counter(lst)
+    duplicates = [item for item, count in counts.items() if count > 1]
+    return duplicates
+def nonrepeart(fusion_geneset,geneinfo):
+   duplicates=find_duplicates(fusion_geneset)
+   fusions_nonrepreat=[]
+   if len(duplicates)>0:
+      for fusion in duplicates:
+          infom=[]
+          read_num=0
+          breakpoint_sum1=0
+          breakpoint_sum2=0
+          for item in geneinfo:
+              if fusion==item[0]:
+                 infom.append(item)
+              else:
+                 fusions_nonrepreat.append(item)
+          for item in infom:
+              read_num+=int(item[1])
+              breakpoint_sum1+=int(item[3])
+              breakpoint_sum2+=int(item[5])
+              chrom1=item[2]
+              chrom2=item[4]
+          breakpoint1=breakpoint_sum1/len(infom)
+          breakpoint2=breakpoint_sum2/len(infom)
+          fusion_info=[fusion,read_num,chrom1,breakpoint1,chrom2,breakpoint2]
+          fusions_nonrepreat.append(fusion_info)
+   else:
+        fusions_nonrepreat=geneinfo
+   return fusions_nonrepreat
+LongGF_results=nonrepeart(LongGF_gene,LongGF_fusions)
+JAFFAL_results=nonrepeart(JAFFAL_gene,JAFFAL_fusions)
+
+
