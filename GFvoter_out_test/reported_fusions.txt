@@ -1,2 +1,0 @@
-ID	Gene Fusion	Known
-1	MRPL54:CCDC144NL	yes
