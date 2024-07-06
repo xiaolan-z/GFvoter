@@ -131,7 +131,8 @@ commands1=[
           "samtools index winnowmap.sorted.bam"
           ]
 
-commands2=["../../get_alignment_info data.bam alignment.info1"]
+commands2=["chmod +x ../../get_alignment_info ",
+           "../../get_alignment_info data.bam alignment.info1"]
 commands3=["../../get_alignment_info winnowmap.sorted.bam alignment.info2"]
 run_commands(commands1)
 run_commands(commands2)
