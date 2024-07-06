@@ -10,7 +10,7 @@ The input should be a fastq.gz file (PacBio Iso-Seq, Nanopore, or mixed platform
 ## Installation
 GFvoter can be used on the linux system.
 ### Prerequisites
-    conda install -c bioconda minimap2=2.24 samtools=1.9 winnowmap=2.03 -y
+    conda install -c bioconda minimap2=2.24 winnowmap=2.03 samtools -y
     conda install -c bioconda longgf
 ### Download the GFvoter package
     git clone https://github.com/xiaolan-z/GFvoter.git 
@@ -25,7 +25,8 @@ GFvoter can be used on the linux system.
     tar -zxvf JAFFA_REFERENCE_FILES_HG38_GENCODE22.V2.tar.gz
     ./install_linux64.sh
     cp ./hg38.fa ../
-    
+    cp ../
+If JAFFAL installation is not successful, please refer to https://github.com/Oshlack/JAFFA/wiki/HowToSetUpJAFFA
 ## General usage
 GFvoter can be applied with built-in Human reference genome (hg3.fa) and annotation (gencode.v22.chr_patch_hapl_scaff.annotation.gtf):
 
