@@ -25,7 +25,7 @@ GFvoter can be used on the linux system.
     tar -zxvf JAFFA_REFERENCE_FILES_HG38_GENCODE22.V2.tar.gz
     ./install_linux64.sh
     cp ./hg38.fa ../
-    cp ../
+    cd ../
 If JAFFAL installation is not successful, please refer to https://github.com/Oshlack/JAFFA/wiki/HowToSetUpJAFFA
 ## General usage
 GFvoter can be applied with built-in Human reference genome (hg3.fa) and annotation (gencode.v22.chr_patch_hapl_scaff.annotation.gtf):
