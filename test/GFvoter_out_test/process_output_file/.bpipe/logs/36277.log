@@ -1,0 +1,36 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass$3$1 (file:/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bpipe-0.9.9.2/bin/../lib/bpipe.jar) to method java.lang.Object.finalize()
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass$3$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[----]	====================================================================================================
+[----]	|                              Starting Pipeline at 2025-01-17 19:10                               |
+[----]	====================================================================================================
+[]	
+[]	========================================= Stage run_check ==========================================
+[testdata.fastq]	
+[testdata.fastq]	==================================== Stage get_fasta (testdata) ====================================
+[testdata.fastq.71]	java -ea -Xmx200m -cp /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bbmap/current/ jgi.ReformatReads ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/doc/test/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16
+[testdata.fastq.71]	Executing jgi.ReformatReads [ignorebadquality=t, in=/home/renzt/rzt/fusion_gene/GFvoter-main/doc/test/testdata.fastq.gz, out=testdata.fastq/testdata.fastq.fasta, threads=16]
+[testdata.fastq.71]	Set threads to 16
+[testdata.fastq.71]	Exception in thread "main" java.lang.AssertionError: File testdata.fastq/testdata.fastq.fasta exists and overwrite=false
+[testdata.fastq.71]		at align2.Tools.testOutputFiles(Tools.java:522)
+[testdata.fastq.71]		at jgi.ReformatReads.<init>(ReformatReads.java:319)
+[testdata.fastq.71]		at jgi.ReformatReads.main(ReformatReads.java:42)
+ERROR: Command failed with exit status = 1 : 
+
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/doc/test/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ; 
+
+
+========================================= Pipeline Failed ==========================================
+
+One or more parallel stages aborted. The following messages were reported: 
+
+Branch testdata.fastq in stage Unknown reported message:
+
+Command failed with exit status = 1 : 
+
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/doc/test/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ;
+
+Use 'bpipe errors' to see output from failed commands.
+

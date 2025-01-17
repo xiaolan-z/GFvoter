@@ -1,0 +1,51 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass$3$1 (file:/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bpipe-0.9.9.2/bin/../lib/bpipe.jar) to method java.lang.Object.finalize()
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass$3$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[----]	====================================================================================================
+[----]	|                              Starting Pipeline at 2025-01-16 17:12                               |
+[----]	====================================================================================================
+[]	
+[]	========================================= Stage run_check ==========================================
+[0.1]	Running JAFFA version 2.4_dev
+[0.1]	Checking for required data files...
+[0.1]	/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa
+[0.1]	/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab
+[0.1]	/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt
+[0.1]	/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa
+[0.1]	/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/Masked_hg38.1.bt2
+[0.1]	/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.1.bt2
+[0.1]	All looking good
+[testdata.fastq]	
+[testdata.fastq]	==================================== Stage get_fasta (testdata) ====================================
+[testdata.fastq.3]	java -ea -Xmx200m -cp /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bbmap/current/ jgi.ReformatReads ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16
+[testdata.fastq.3]	Executing jgi.ReformatReads [ignorebadquality=t, in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz, out=testdata.fastq/testdata.fastq.fasta, threads=16]
+[testdata.fastq.3]	Set threads to 16
+[testdata.fastq.3]	pigz: /usr/local/lib/libz.so.1: version `ZLIB_1.2.5.1' not found (required by pigz)
+[testdata.fastq.3]	Input is being processed as unpaired
+[testdata.fastq.3]	Input:                  	0 reads          	0 bases
+[testdata.fastq.3]	Output:                 	0 reads (NaN%) 	0 bases (NaN%)
+[testdata.fastq.3]	Time:                         	0.075 seconds.
+[testdata.fastq.3]	Reads Processed:           0 	0.00k reads/sec
+[testdata.fastq.3]	Bases Processed:           0 	0.00m bases/sec
+[testdata.fastq.3]	Exception in thread "main" java.lang.RuntimeException: ReformatReads terminated in an error state; the output may be corrupt.
+[testdata.fastq.3]		at jgi.ReformatReads.process(ReformatReads.java:1103)
+[testdata.fastq.3]		at jgi.ReformatReads.main(ReformatReads.java:43)
+ERROR: Command failed with exit status = 1 : 
+
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ; 
+
+
+========================================= Pipeline Failed ==========================================
+
+One or more parallel stages aborted. The following messages were reported: 
+
+Branch testdata.fastq in stage Unknown reported message:
+
+Command failed with exit status = 1 : 
+
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ;
+
+Use 'bpipe errors' to see output from failed commands.
+

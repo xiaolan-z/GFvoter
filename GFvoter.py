@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 current_dir = Path(__file__).resolve().parent
-module_dir = current_dir / 'module'
+module_dir = current_dir / 'module1_rzt'
 sys.path.append(str(module_dir))
 
 import longgf_jaffal
@@ -225,7 +225,6 @@ def main():
       
     sorted_fusions = sorted(GFvoter_results, key=lambda x: int(x[1]), reverse=True)
     count = sum(1 for item in sorted_fusions if float(item[1]) < 2)
-    print(len(sorted_fusions))
     if count >= 3*(len(sorted_fusions)-count) and len(sorted_fusions)!=count:
         sorted_fusions = [item for item in sorted_fusions if float(item[1]) >= 2]
     reported_fusion = "../reported_fusions.txt"

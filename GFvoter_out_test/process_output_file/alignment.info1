@@ -1,6 +1,0 @@
-read_id chromosome strand start_pos end_pos soft_left soft_right chaining_score flag supplementary? mapped-length
-61a8f182-7a7c-3703-0b49-24b5f672f835 chr12 - 57630154 57632647 204 407 371 primary not_supplementary 653
-2d387943-07fa-a9bd-b012-99806f2aced1 chr17 . 20863395 20865511 0 113 1580 primary not_supplementary 2117
-2d387943-07fa-a9bd-b012-99806f2aced1 chr19 . 3762705 3762818 0 2112 103 primary supplementary 114
-3f0b8a85-5535-b16a-4c48-15eb724cf1d5 chr8 . 29067282 29069760 2 16 1130 primary not_supplementary 2479
-61a8f182-7a7c-3703-0b49-24b5f672f835 chr8 . 100718089 100718281 8 646 78 primary supplementary 193

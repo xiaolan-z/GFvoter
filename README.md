@@ -50,6 +50,7 @@ Then you can run GFvoter under virtual environment `GFenv`
 A test dataset is available to verify successful installation:
 
     conda activate GFenv
+    cd GFvoter
     sh doc/test/test_run.sh
 
 The specific parameters are as follows:

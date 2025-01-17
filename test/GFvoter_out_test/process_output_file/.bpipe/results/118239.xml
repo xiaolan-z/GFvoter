@@ -1,0 +1,26 @@
+<job id='118239'>
+  <succeeded>false</succeeded>
+  <startDateTime>2025-01-16 17:12:26</startDateTime>
+  <endDateTime>2025-01-16 17:12:28</endDateTime>
+  <totalCommandTimeSeconds>0.571</totalCommandTimeSeconds>
+  <commands>
+    <command>
+      <id>1</id>
+      <stage>run_check</stage>
+      <branch></branch>
+      <content>echo "Running JAFFA version 2.4_dev" ;             echo "Checking for required data files..." ;             for i in /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/Masked_hg38.1.bt2 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.1.bt2 ;                   do ls $i 2&gt;/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.4_dev.. checks passed" &gt; checks</content>
+      <start>2025-01-16 17:12:27</start>
+      <end>2025-01-16 17:12:27</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>3</id>
+      <stage>get_fasta</stage>
+      <branch>testdata.fastq</branch>
+      <content>/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ;</content>
+      <start>2025-01-16 17:12:27</start>
+      <end>2025-01-16 17:12:27</end>
+      <exitCode>1</exitCode>
+    </command>
+  </commands>
+</job>

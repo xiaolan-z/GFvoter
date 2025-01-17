@@ -1,2 +1,0 @@
-ID	Gene Fusion	supporting_reads	chrom1	breakpoint1	chrom2	breakpoint2	Known
-1	MRPL54:CCDC144NL	1	chr19	3762818	chr17	20865510	yes

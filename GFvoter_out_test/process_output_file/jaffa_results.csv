@@ -1,2 +1,0 @@
-sample,fusion genes,chrom1,base1,strand1,chrom2,base2,strand2,gap (kb),spanning pairs,spanning reads,inframe,aligns,rearrangement,contig,contig break,classification,known
-testdata.fastq,MRPL54:CCDC144NL,chr19,3762818,+,chr17,20865509,-,Inf,0,1,TRUE,TRUE,TRUE,2d387943-07fa-a9bd-b012-99806f2aced1,2112,PotentialTransSplicing,-

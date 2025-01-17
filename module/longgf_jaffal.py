@@ -109,6 +109,11 @@ args = initialization_parameters()
 input_fastq_gz=args.input_fastq_gz
 datatype=args.datatype
 output_file=args.output_file
+if os.path.isabs(input_fastq_gz):
+    input_fastq_gz=input_fastq_gz
+else:
+    input_fastq_gz=os.path.normpath(os.getcwd()+"/"+input_fastq_gz)
+
 if output_file[-1]!='/':
     output_file+='/'
 choice=args.choice
@@ -118,6 +123,8 @@ start_time = datetime.datetime.now()
 print(f"---------------------- Starting pineline at {start_time} ----------------------------")
 
 os.makedirs(output_file+'process_output_file/', exist_ok=True)
+# data_fastq=os.path.normpath(output_file+"/process_output_file/data.fastq")
+# os.system(f"gunzip -c {input_fastq_gz} > {data_fastq}")
 os.chdir(output_file+'process_output_file/')
 process_path=os.getcwd()
 repetitive_k15=GFvoter_path+"/doc/repetitive_k15.txt"
