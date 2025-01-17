@@ -3,39 +3,45 @@ import subprocess
 import os
 import itertools
 import re
+from  collections import defaultdict
+from collections import Counter
+import multiprocessing
+import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 
 def initialization_parameters():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', action='store', dest='input_fastq_gz', type=str, required=False, default="None_file",
-                        help='input_path')
-    parser.add_argument('-t', action='store', dest='datatype',
-                         type=str, required=True, help='datatype')
-    parser.add_argument('-s', action='store', dest='choice', type=str, required=False, default="real",
-                        help='the source of input read.') 
+    parser.add_argument('-i', action='store', dest='input_fastq_gz', type=str, required=True,
+                        help='Indicates a path to the input **.fastq.gz file')
+    parser.add_argument('-t', action='store', dest='datatype',type=str, required=True, 
+                        help='Indicates the type of the input data, pacbio or nanopore')
+    parser.add_argument('-s', action='store', dest='choice', type=str, required=True, 
+                        help='The input data is, real or simulate') 
     parser.add_argument('-o', action='store', dest='output_file', type=str, required=False, default="./GFvoter_out/",
-                        help='output directory.')
+                        help='Indicates a path to the output directory.')
+    parser.add_argument('-n', action='store', dest='min_sup_read', type=int, required=False, default=1,
+                        help='Indicates the minimum number of supporting reads of each reported fusion.')
+    parser.add_argument('-l', action='store', dest='min_ovlp_len', type=int, required=False, default=15,
+                        help='Indicates the minimum overlap length between two aligments of one read.')
+    parser.add_argument('-el', action='store', dest='min_exonovlp_len', type=int, required=False, default=400,
+                        help='Indicates the minimum exon overlap length of an alignment record against the reference genome.')
+    parser.add_argument('-sn', action='store', dest='secondary_alignment', type=int, required=False, default=0,
+                        help='Indicates the number of secondary alignment of a read.') 
+    parser.add_argument('-rp', action='store', dest='read_proportion', type=float, required=False, default=0.75,
+                        help='Indicates the propotion of one alignment to the read.')
+    parser.add_argument('-gp', action='store', dest='gene_proportion', type=float, required=False, default=0.3,
+                        help='Indicates the propotion of one alignment to the genome.')
+    parser.add_argument('-sp', action='store', dest='sup_read', type=int, required=False, default=2,
+                        help='Indicates the minimum number of supporting reads of each candidate in Scoring process.')                                  
+    parser.add_argument('-score', action='store', dest='min_score', type=int, required=False, default=400,
+                        help='Indicates the score threshold set during the scoring process.')          
+    parser.add_argument('-poll', action='store', dest='min_poll', type=int, required=False, default=6,
+                        help='Indicates the minimum number of votes for each reported fusion.')
+    parser.add_argument('-ground_truth', action='store', dest='ground_truth', type=str, required=False, default="a",
+                        help='Indicates a path to the custom known_fusions.')                    
     args = parser.parse_args()
     return args
-
-def run_commands(commands):
-    for cmd in commands:
-        result = subprocess.run(cmd, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-        if result.returncode == 0:
-            output = result.stdout
-        else:
-            error = result.stderr
-            print("Error:", error)
-
-
-def get_gene(read_chromosome, read_start_pos, read_end_pos, gene_info):
-    gene_list = gene_info.get(read_chromosome, [])
-    genex=''
-    geney=''
-    for gene in gene_list:
-        if read_start_pos >= int(gene[0]) and read_end_pos <= int(gene[1]):
-           genex=gene[2]
-           geney=gene[3]
-    return genex,geney
 
 
 def search_fusion_gene(fusion_gene,records):
@@ -60,34 +66,64 @@ def merged_file(file1,file2,merged_file):
               for line in content2:
                   f.write(line)
 
+def run_commands_parallel(commands1, commands2):
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        future1 = executor.submit(run_command_list, commands1)
+        future2 = executor.submit(run_command_list, commands2)
+        future1.result()
+        future2.result()
 
-def fusion_record(align_file,fusion_records):
-    from  collections import defaultdict
-    with open(align_file, 'r') as file,open(gene_file, 'r') as gene_data:
-         lines = file.readlines()
-         gene_info = eval(gene_data.read())
-         data_dict = defaultdict(list)
-         first_elements = [line.split()[0] for line in lines[1:]]  
-         for line, key in zip(lines[1:], first_elements):
-             elements = line.split()
-             read_chromosome=elements[1]
-             read_start_pos=int(elements[3])
-             read_end_pos=int(elements[4])
-             left_soft=int(elements[5])
-             right_soft=int(elements[6])
-             rl=int(elements[10])
-             a=elements[8]
-             b=elements[9]
-             if a=='secondary':
-                continue
-             elif first_elements.count(key) > 1:  
-                genex,geney=get_gene(read_chromosome, read_start_pos, read_end_pos, gene_info)
-                if genex !='':
-                   data_dict[key].append([genex,read_chromosome, read_start_pos, read_end_pos,geney,left_soft,right_soft,rl,a,b])  
+def run_command_list(commands):
+    for command in commands:
+        run_command(command)
+
+
+def run_command(command):
+    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"command '{command}' failed to execute. Errors:{result.stderr}")
+    return result
+
+# def read_to_gene(info_list, time):
+#     elements = info_list.split()
+#     read_chromosome=elements[1]
+#     read_start_pos=int(elements[3])
+#     read_end_pos=int(elements[4])
+#     left_soft=int(elements[5])
+#     right_soft=int(elements[6])
+#     rl=int(elements[10])
+#     a=elements[8]
+#     b=elements[9]
+#     if a =='secondary':
+#         return None
+#     elif time > 1:
+#          with open(gene_list, 'r') as file:
+#               for gene_info in file:
+#                   elements = line.strip().split(', ')
+#                   genex, geney = '', ''
+#                   if gene_info[1]==read_chromosome:
+#                      if read_start_pos >= int(gene_info[2]) and read_end_pos <= int(gene[3]):
+#                         genex=gene[0]
+#                         geney=gene[4]
+#                         return [genex,read_chromosome, read_start_pos, read_end_pos, geney, left_soft,right_soft,rl,a,b]
+#                         break
+#     else:
+#         return None
+
+
+def fusion_record_read_file(align_file):
+    with open(align_file, 'r') as file:
+        lines = file.readlines()
+    first_elements = [line.split()[0] for line in lines[1:]]
+    count = Counter(first_elements)
+    count_list = [count[element] for element in first_elements]
+    return first_elements,lines[1:],count_list
+
+def fusion_record(fusionrecord,datadict):
     specified_strings1 = ['primary', 'not_supplementary']  
     specified_strings2 = ['primary', 'supplementary']  
     new_dict = {}
-    for key, value in data_dict.items():
+    for key, value in datadict.items():
         specified_strings1_values = [item for item in value if item[-2:] == specified_strings1]
         specified_strings2_values = [item for item in value if item[-2:] == specified_strings2]
         if len(value) == 2:
@@ -98,8 +134,7 @@ def fusion_record(align_file,fusion_records):
            for i, pair in enumerate(paired_values):
                new_key = f"{key}_{i+1}"
                new_dict[new_key] = list(pair)
-
-    with open(fusion_records, 'w') as output_file:
+    with open(fusionrecord, 'w') as output_file:
          for key, values in new_dict.items():
              new_values = [item[:-2] for item in values]
              line = f"{key} {' '.join(map(str, new_values))}\n"
@@ -120,61 +155,61 @@ def fusion_record(align_file,fusion_records):
                          output_file.write(new_line)
 
 
+def get_result():
+    total_candifusions=[]
+    total_records=[]
+    seen_candifusions = set()
+    with open(fusion_records, 'r') as f_in:
+        for line in f_in:
+            elements = line.strip().split()
+            if len(elements) >= 10 and elements[1] != elements[9]:
+                new_element = elements[1] + ":" + elements[9]
+                total_records.append(line.strip())
+                if new_element not in seen_candifusions:
+                   seen_candifusions.add(new_element)
+                   total_candifusions.append(new_element)
+
+    minimap2_results=set()
+    winnowmap_results=set()
+    with open(fusion_records1, 'r') as f:
+        for line in f:
+            elements = line.strip().split()
+            if len(elements) >= 10 and elements[1] != elements[9]:
+                new_element = elements[1] + ":" + elements[9]
+                if new_element not in minimap2_results:
+                    minimap2_results.add(new_element)
+    with open(fusion_records2, 'r') as f:
+        for line in f:
+            elements = line.strip().split()
+            if len(elements) >= 10 and elements[1] != elements[9]:
+                new_element = elements[1] + ":" + elements[9]
+                if new_element not in winnowmap_results:
+                    winnowmap_results.add(new_element)
+    return total_candifusions,total_records,minimap2_results,winnowmap_results
+
+
+GFvoter_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
+GFvoter_path = os.path.normpath(GFvoter_path)
 args = initialization_parameters()
 input_fastq_gz=args.input_fastq_gz
-repetitive_k15="../../repetitive_k15.txt"
-
-commands1=[
-         f"winnowmap -W {repetitive_k15} -ax splice ../../hg38.fa {input_fastq_gz} > winnowmap.sam",
-          "samtools view -bS winnowmap.sam > winnowmap.bam",
-          "samtools sort winnowmap.bam -o winnowmap.sorted.bam",
-          "samtools index winnowmap.sorted.bam"
-          ]
-
-commands2=["chmod +x ../../get_alignment_info ",
-           "../../get_alignment_info data.bam alignment.info1"]
-commands3=["../../get_alignment_info winnowmap.sorted.bam alignment.info2"]
-run_commands(commands1)
-run_commands(commands2)
-run_commands(commands3)
-
-gene_file = "../../sum_gene_info_sort_nonrepeat.txt"
-align_file1="alignment.info1"
-align_file2="alignment.info2"
+datatype=args.datatype
+output_file_path=args.output_file
+align_file="alignment.info"
 fusion_records="candi_fusiongene_records.txt"
 fusion_records1="fusion_records1"
 fusion_records2="fusion_records2"
-align_file="alignment.info"
-fusion_record(align_file1,fusion_records1)
-fusion_record(align_file2,fusion_records2)
-merged_file(align_file1,align_file2,align_file)
-merged_file(fusion_records1,fusion_records2,fusion_records)
 
-total_candifusions= set()
-total_records=[]
-with open(fusion_records, 'r') as f_in:
-     for line in f_in:
-         total_records.append(line.strip())
-         elements = line.strip().split()
-         if len(elements) >= 10 and elements[1] != elements[9]:
-            new_element = elements[1] + ":" + elements[9]
-            if new_element not in total_candifusions:
-               total_candifusions.add(new_element)
 
-minimap2_results=set()
-winnowmap_results=set()
-with open(fusion_records1, 'r') as f:
-     for line in f:
-         elements = line.strip().split()
-         if len(elements) >= 10 and elements[1] != elements[9]:
-            new_element = elements[1] + ":" + elements[9]
-            if new_element not in minimap2_results:
-               minimap2_results.add(new_element)
-with open(fusion_records2, 'r') as f:
-     for line in f:
-         elements = line.strip().split()
-         if len(elements) >= 10 and elements[1] != elements[9]:
-            new_element = elements[1] + ":" + elements[9]
-            if new_element not in winnowmap_results:
-               winnowmap_results.add(new_element)
+if __name__ == "__main__":
 
+    run_command(f"chmod +x {GFvoter_path}/get_alignment_info")
+
+    align_file1="alignment.info1"
+    align_file2="alignment.info2"
+    minimap_result="data.bam"
+    winnowmap_result="winnowmap.sorted.bam"
+    
+    run_commands_parallel([f"{GFvoter_path}/get_alignment_info {minimap_result} {align_file1}"], [f"{GFvoter_path}/get_alignment_info {winnowmap_result} {align_file2}"])
+    run_commands_parallel([f"{GFvoter_path}/read2gene {GFvoter_path}/doc/sum_gene_info_sort_nonrepeat.txt1 {align_file1} {fusion_records1}"], [f"{GFvoter_path}/read2gene {GFvoter_path}/doc/sum_gene_info_sort_nonrepeat.txt1 {align_file1} {fusion_records2}"])
+    merged_file(align_file1,align_file2,align_file)
+    run_command(f"{GFvoter_path}/mergeAndsort fusion_records1 fusion_records2 candi_fusiongene_records.txt")

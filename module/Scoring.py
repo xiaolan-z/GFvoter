@@ -7,38 +7,54 @@ import math
 
 def initialization_parameters():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-i', action='store', dest='input_fastq_gz', type=str, required=False, default="None_file",
-                        help='input_path')
-    parser.add_argument('-t', action='store', dest='datatype',
-                         type=str, required=True, help='datatype')
-    parser.add_argument('-n', action='store', dest='min_sup_read', type=int, required=False, default=2,
-                        help='the number of supporting reads of gene fusion.')
-    parser.add_argument('-l', action='store', dest='min_ovlp_len', type=int, required=False, default=15,
-                        help='the minimum overlap length between two aligments of one read.')
-    parser.add_argument('-el', action='store', dest='min_exonovlp_len', type=int, required=False, default=400,
-                        help='the minimum exon overlap length of an alignment record against the reference genome.')
-    parser.add_argument('-sn', action='store', dest='secondary_alignment', type=int, required=False, default=0,
-                        help='the number of secondary alignment of a read.') 
-    parser.add_argument('-rp', action='store', dest='read_proportion', type=float, required=False, default=0.75,
-                        help='the propotion of one alignment to the read.')
-    parser.add_argument('-gp', action='store', dest='gene_proportion', type=float, required=False, default=0.3,
-                        help='the propotion of one alignment to the genome.')  
+    parser.add_argument('-i', action='store', dest='input_fastq_gz', type=str, required=True,
+                        help='Indicates a path to the input **.fastq.gz file')
+    parser.add_argument('-t', action='store', dest='datatype',type=str, required=True, 
+                        help='Indicates the type of the input data, pacbio or nanopore')
+    parser.add_argument('-s', action='store', dest='choice', type=str, required=True, 
+                        help='The input data is, real or simulate') 
     parser.add_argument('-o', action='store', dest='output_file', type=str, required=False, default="./GFvoter_out/",
-                        help='output directory.')
-    parser.add_argument('-s', action='store', dest='choice', type=str, required=False, default="real",
-                        help='the source of input read.')                                                                                    
+                        help='Indicates a path to the output directory.')
+    parser.add_argument('-n', action='store', dest='min_sup_read', type=int, required=False, default=1,
+                        help='Indicates the minimum number of supporting reads of each reported fusion.')
+    parser.add_argument('-l', action='store', dest='min_ovlp_len', type=int, required=False, default=15,
+                        help='Indicates the minimum overlap length between two aligments of one read.')
+    parser.add_argument('-el', action='store', dest='min_exonovlp_len', type=int, required=False, default=400,
+                        help='Indicates the minimum exon overlap length of an alignment record against the reference genome.')
+    parser.add_argument('-sn', action='store', dest='secondary_alignment', type=int, required=False, default=0,
+                        help='Indicates the number of secondary alignment of a read.') 
+    parser.add_argument('-rp', action='store', dest='read_proportion', type=float, required=False, default=0.75,
+                        help='Indicates the propotion of one alignment to the read.')
+    parser.add_argument('-gp', action='store', dest='gene_proportion', type=float, required=False, default=0.3,
+                        help='Indicates the propotion of one alignment to the genome.')
+    parser.add_argument('-sp', action='store', dest='sup_read', type=int, required=False, default=2,
+                        help='Indicates the minimum number of supporting reads of each candidate in Scoring process.')                                  
+    parser.add_argument('-score', action='store', dest='min_score', type=int, required=False, default=400,
+                        help='Indicates the score threshold set during the scoring process.')          
+    parser.add_argument('-poll', action='store', dest='min_poll', type=int, required=False, default=6,
+                        help='Indicates the minimum number of votes for each reported fusion.') 
+    parser.add_argument('-ground_truth', action='store', dest='ground_truth', type=str, required=False, default="a",
+                        help='Indicates a path to the custom known_fusions.')                                                                                                  
     args = parser.parse_args()
     return args
 
-args = initialization_parameters()
-min_sup_read=args.min_sup_read
-min_ovlp_len=args.min_ovlp_len
-min_exonovlp_len=args.min_exonovlp_len
-secondary_alignment=args.secondary_alignment
-read_proportion=args.read_proportion
-gene_proportion=args.gene_proportion
+def get_reads_num(gene1,gene2,records,current_line_index):
+    fusion_gene_records = []
+    while current_line_index < len(records):
+          line = records[current_line_index]
+          fields = line.strip().split()
+          record_gene1 = fields[1]
+          record_gene2 = fields[9]
+          if record_gene1 == gene1 and record_gene2 == gene2:
+             fusion_gene_records.append(line.strip())
+             current_line_index += 1  
+          else:
+             break  
+    reads_num = len(fusion_gene_records)
+    return fusion_gene_records, int(reads_num), current_line_index
 
-def get_reads_num(fusion_gene,records):
+
+def get_reads_num1(fusion_gene,records):
     fusion_gene_records = []
     for line in records:
         fields = line.strip().split()
@@ -60,19 +76,17 @@ def get_distance(record):
     distance=abs(rightread_soft_left-leftread_soft_left-rl1)
     return int(distance)
 
-def get_secondary(record,alignment_data):
-    sec=0
-    read_name = record.split()[0]
-    i=0
-    for line in alignment_data:
-        if line.split()[0] == read_name and line.split()[8]=='secondary':
-           i+=1
-    if i==0:
-       sec=1
-    else:
-       sec=0
-    return int(sec)
 
+def get_secondary(record, alignment_dict):
+    read_name = record.split()[0]
+    sec = 0
+    if read_name in alignment_dict:
+       if 'secondary' in alignment_dict[read_name]:
+          sec = 0
+       else:
+          sec = 1
+
+    return int(sec)
 
 def get_exon_ovlp(read_chromosome,genename,read_start,read_end,gene_info):
     gene_list = gene_info.get(read_chromosome, [])
@@ -89,7 +103,8 @@ def get_exon_ovlp(read_chromosome,genename,read_start,read_end,gene_info):
                   exon_ovlp += overlap_end - overlap_start + 1
            break
     return int(exon_ovlp)
- 
+
+
 def calculate_variance(data):
     variance = round(np.var(data),3)
     return variance
@@ -109,6 +124,7 @@ def calculate_ratio(num1, num2):
         return ratio
     else:
         return 0
+        
 def get_twoexonovlp_and_fourratio(gene1,gene2,gene_info,record):
     r_start1=int(record.split()[3])
     r_end1=int(record.split()[4])
@@ -143,9 +159,15 @@ def get_score(reads_num,distance,sec,exon_ovlp1,exon_ovlp2,prl,pgl,prr,pgr):
     m=round(min(prl,prr)/read_proportion-1,1)
     n=round(min(pgl,pgr)/gene_proportion-1,1)
     if exon_ovlp1>min_exonovlp_len and exon_ovlp2>min_exonovlp_len and distance<=min_ovlp_len:
-      s=(reads_num-min_sup_read)*(round(math.log10(exon_ovlp1),1)+round(math.log10(exon_ovlp2),1))*math.pow(2,10*min(m,n))*sec*(16-distance)
+      s=(reads_num-sup_read)*(round(math.log10(exon_ovlp1),1)+round(math.log10(exon_ovlp2),1))*math.pow(2,10*min(m,n))*sec*(16-distance)
     else:
        s=0
     return round(s)
 
-
+args = initialization_parameters()
+sup_read=args.sup_read
+min_ovlp_len=args.min_ovlp_len
+min_exonovlp_len=args.min_exonovlp_len
+secondary_alignment=args.secondary_alignment
+read_proportion=args.read_proportion
+gene_proportion=args.gene_proportion
