@@ -1,0 +1,80 @@
+<job id='98961'>
+  <succeeded>false</succeeded>
+  <startDateTime>2025-01-16 21:34:30</startDateTime>
+  <endDateTime>2025-01-16 21:35:53</endDateTime>
+  <totalCommandTimeSeconds>82.085</totalCommandTimeSeconds>
+  <commands>
+    <command>
+      <id>25</id>
+      <stage>minimap2_transcriptome</stage>
+      <branch>testdata.fastq</branch>
+      <content>/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t 16 -x map-ont -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa testdata.fastq/testdata.fastq.fasta &gt; testdata.fastq/testdata.fastq.paf ;</content>
+      <start>2025-01-16 21:34:31</start>
+      <end>2025-01-16 21:34:38</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>27</id>
+      <stage>filter_transcripts</stage>
+      <branch>testdata.fastq</branch>
+      <content>/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/process_transcriptome_align_table testdata.fastq/testdata.fastq.paf 1000 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab &gt; testdata.fastq/testdata.fastq.txt</content>
+      <start>2025-01-16 21:34:38</start>
+      <end>2025-01-16 21:34:39</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>29</id>
+      <stage>extract_fusion_sequences</stage>
+      <branch>testdata.fastq</branch>
+      <content>cat testdata.fastq/testdata.fastq.txt | awk '{print $1}' &gt; testdata.fastq/testdata.fastq.fusions.fa.temp ;                 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat in=testdata.fastq/testdata.fastq.fasta out=stdout.fasta fastawrap=0 | /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/extract_seq_from_fasta testdata.fastq/testdata.fastq.fusions.fa.temp &gt; testdata.fastq/testdata.fastq.fusions.fa ;                 rm testdata.fastq/testdata.fastq.fusions.fa.temp ;</content>
+      <start>2025-01-16 21:34:39</start>
+      <end>2025-01-16 21:34:39</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>31</id>
+      <stage>minimap2_genome</stage>
+      <branch>testdata.fastq</branch>
+      <content>/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t 16 -x splice -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa testdata.fastq/testdata.fastq.fusions.fa &gt; testdata.fastq/testdata.fastq_genome.paf; 	   grep $'\t+\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",",$3","$3+100",",  $8","$9-$4+$3+100"," }' &gt; testdata.fastq/testdata.fastq_genome.psl ; 	   grep $'\t-\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",", $2-$4","$2-$4+100",", $8","$9-$4+$3+100"," }' &gt;&gt; testdata.fastq/testdata.fastq_genome.psl ;</content>
+      <start>2025-01-16 21:34:39</start>
+      <end>2025-01-16 21:35:52</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>33</id>
+      <stage>make_fasta_reads_table</stage>
+      <branch>testdata.fastq</branch>
+      <content>echo  -e "transcript	break_min	break_max	fusion_genes	spanning_pairs	spanning_reads" &gt; testdata.fastq/testdata.fastq.reads ;                  awk '{ print $1"	"$2"	"$3"	"$4"	"0"	"1}' testdata.fastq/testdata.fastq.txt | sort -u  &gt;&gt; testdata.fastq/testdata.fastq.reads</content>
+      <start>2025-01-16 21:35:52</start>
+      <end>2025-01-16 21:35:53</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>35</id>
+      <stage>get_final_list</stage>
+      <branch>testdata.fastq</branch>
+      <content>if [ ! -s testdata.fastq/testdata.fastq_genome.psl ] ; then touch testdata.fastq/testdata.fastq.summary ; else  /usr/bin/R --vanilla --args testdata.fastq/testdata.fastq_genome.psl testdata.fastq/testdata.fastq.reads /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt  10000 NoSupport,PotentialReadThrough 50 testdata.fastq/testdata.fastq.summary &lt; /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/make_final_table.R ; fi;</content>
+      <start>2025-01-16 21:35:53</start>
+      <end>2025-01-16 21:35:53</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>37</id>
+      <stage>report_3_gene_fusions</stage>
+      <branch>testdata.fastq</branch>
+      <content>/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table testdata.fastq/testdata.fastq.summary testdata.fastq/testdata.fastq.txt testdata.fastq/testdata.fastq.3gene_reads &gt; testdata.fastq/testdata.fastq.3gene_summary</content>
+      <start>2025-01-16 21:35:53</start>
+      <end>2025-01-16 21:35:53</end>
+      <exitCode>0</exitCode>
+    </command>
+    <command>
+      <id>39</id>
+      <stage>compile_all_results</stage>
+      <branch></branch>
+      <content>/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary &lt; /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done &lt; jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. &amp; Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;</content>
+      <start>2025-01-16 21:35:53</start>
+      <end>2025-01-16 21:35:53</end>
+      <exitCode>1</exitCode>
+    </command>
+  </commands>
+</job>

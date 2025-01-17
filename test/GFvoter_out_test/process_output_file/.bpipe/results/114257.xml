@@ -1,0 +1,17 @@
+<job id='114257'>
+  <succeeded>false</succeeded>
+  <startDateTime>2025-01-16 22:02:13</startDateTime>
+  <endDateTime>2025-01-16 22:02:15</endDateTime>
+  <totalCommandTimeSeconds>0.538</totalCommandTimeSeconds>
+  <commands>
+    <command>
+      <id>69</id>
+      <stage>compile_all_results</stage>
+      <branch></branch>
+      <content>/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary &lt; /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done &lt; jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. &amp; Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;</content>
+      <start>2025-01-16 22:02:14</start>
+      <end>2025-01-16 22:02:15</end>
+      <exitCode>1</exitCode>
+    </command>
+  </commands>
+</job>

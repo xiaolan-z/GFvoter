@@ -1,0 +1,7 @@
+118239	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+134353	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+97261	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+98961	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+108014	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+111181	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+114257	bpipe run /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFAL.groovy /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz

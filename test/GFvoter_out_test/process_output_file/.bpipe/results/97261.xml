@@ -1,0 +1,17 @@
+<job id='97261'>
+  <succeeded>false</succeeded>
+  <startDateTime>2025-01-16 21:28:51</startDateTime>
+  <endDateTime>2025-01-16 21:28:52</endDateTime>
+  <totalCommandTimeSeconds>0.461</totalCommandTimeSeconds>
+  <commands>
+    <command>
+      <id>22</id>
+      <stage>get_fasta</stage>
+      <branch>testdata.fastq</branch>
+      <content>/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ;</content>
+      <start>2025-01-16 21:28:51</start>
+      <end>2025-01-16 21:28:52</end>
+      <exitCode>1</exitCode>
+    </command>
+  </commands>
+</job>

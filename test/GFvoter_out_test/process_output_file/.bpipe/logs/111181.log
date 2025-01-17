@@ -1,0 +1,63 @@
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.reflection.CachedClass$3$1 (file:/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bpipe-0.9.9.2/bin/../lib/bpipe.jar) to method java.lang.Object.finalize()
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.reflection.CachedClass$3$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[----]	====================================================================================================
+[----]	|                              Starting Pipeline at 2025-01-16 21:57                               |
+[----]	====================================================================================================
+[]	
+[]	========================================= Stage run_check ==========================================
+[testdata.fastq]	
+[testdata.fastq]	==================================== Stage get_fasta (testdata) ====================================
+[testdata.fastq]	
+[testdata.fastq]	============================= Stage minimap2_transcriptome (testdata) ==============================
+[testdata.fastq]	
+[testdata.fastq]	=============================== Stage filter_transcripts (testdata) ================================
+[testdata.fastq]	
+[testdata.fastq]	============================ Stage extract_fusion_sequences (testdata) =============================
+[testdata.fastq]	
+[testdata.fastq]	================================= Stage minimap2_genome (testdata) =================================
+[testdata.fastq]	
+[testdata.fastq]	============================= Stage make_fasta_reads_table (testdata) ==============================
+[testdata.fastq]	
+[testdata.fastq]	================================= Stage get_final_list (testdata) ==================================
+[testdata.fastq]	
+[testdata.fastq]	============================== Stage report_3_gene_fusions (testdata) ==============================
+[]	
+[]	==================================== Stage compile_all_results =====================================
+[0.59]	R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+[0.59]	Copyright (C) 2018 The R Foundation for Statistical Computing
+[0.59]	Platform: x86_64-pc-linux-gnu (64-bit)
+[0.59]	R is free software and comes with ABSOLUTELY NO WARRANTY.
+[0.59]	You are welcome to redistribute it under certain conditions.
+[0.59]	Type 'license()' or 'licence()' for distribution details.
+[0.59]	R is a collaborative project with many contributors.
+[0.59]	Type 'contributors()' for more information and
+[0.59]	'citation()' on how to cite R or R packages in publications.
+[0.59]	Type 'demo()' for some demos, 'help()' for on-line help, or
+[0.59]	'help.start()' for an HTML browser interface to help.
+[0.59]	Type 'q()' to quit R.
+[0.59]	> options(echo=F)
+[0.59]	Compiling the results from:
+[0.59]	testdata.fastq
+[0.59]	[1] "No fusions were found for the following samples:"
+[0.59]	[1] "testdata.fastq"
+[0.59]	Error in file(file, "rt") : cannot open the connection
+[0.59]	Calls: read.delim -> read.table -> file
+[0.59]	In addition: Warning message:
+[0.59]	In file(file, "rt") : cannot open file 'NA': No such file or directory
+[0.59]	Execution halted
+ERROR: Command failed with exit status = 1 : 
+
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ; 
+
+
+========================================= Pipeline Failed ==========================================
+
+Command failed with exit status = 1 : 
+
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;
+
+Use 'bpipe errors' to see output from failed commands.
+

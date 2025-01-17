@@ -1,0 +1,132 @@
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 17:12:26 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/118239.log
+# Stage run_check
+echo "Running JAFFA version 2.4_dev" ;             echo "Checking for required data files..." ;             for i in /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/Masked_hg38.1.bt2 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.1.bt2 ;                   do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.4_dev.. checks passed" > checks
+# Stage get_fasta (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ;
+# ################ Finished at Thu Jan 16 17:12:28 CST 2025 Duration = 1.141 seconds #################
+
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 17:25:07 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/134353.log
+# Stage run_check
+# Stage get_fasta (testdata)
+# Stage minimap2_transcriptome (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t 16 -x map-ont -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa testdata.fastq/testdata.fastq.fasta > testdata.fastq/testdata.fastq.paf ;
+# Stage filter_transcripts (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/process_transcriptome_align_table testdata.fastq/testdata.fastq.paf 1000 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab > testdata.fastq/testdata.fastq.txt
+# Stage extract_fusion_sequences (testdata)
+cat testdata.fastq/testdata.fastq.txt | awk '{print $1}' > testdata.fastq/testdata.fastq.fusions.fa.temp ;                 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat in=testdata.fastq/testdata.fastq.fasta out=stdout.fasta fastawrap=0 | /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/extract_seq_from_fasta testdata.fastq/testdata.fastq.fusions.fa.temp > testdata.fastq/testdata.fastq.fusions.fa ;                 rm testdata.fastq/testdata.fastq.fusions.fa.temp ;
+# Stage minimap2_genome (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t 16 -x splice -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa testdata.fastq/testdata.fastq.fusions.fa > testdata.fastq/testdata.fastq_genome.paf; 	   grep $'\t+\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",",$3","$3+100",",  $8","$9-$4+$3+100"," }' > testdata.fastq/testdata.fastq_genome.psl ; 	   grep $'\t-\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",", $2-$4","$2-$4+100",", $8","$9-$4+$3+100"," }' >> testdata.fastq/testdata.fastq_genome.psl ;
+# Stage make_fasta_reads_table (testdata)
+echo  -e "transcript	break_min	break_max	fusion_genes	spanning_pairs	spanning_reads" > testdata.fastq/testdata.fastq.reads ;                  awk '{ print $1"	"$2"	"$3"	"$4"	"0"	"1}' testdata.fastq/testdata.fastq.txt | sort -u  >> testdata.fastq/testdata.fastq.reads
+# Stage get_final_list (testdata)
+if [ ! -s testdata.fastq/testdata.fastq_genome.psl ] ; then touch testdata.fastq/testdata.fastq.summary ; else  /usr/bin/R --vanilla --args testdata.fastq/testdata.fastq_genome.psl testdata.fastq/testdata.fastq.reads /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt  10000 NoSupport,PotentialReadThrough 50 testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/make_final_table.R ; fi;
+# Stage report_3_gene_fusions (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table testdata.fastq/testdata.fastq.summary testdata.fastq/testdata.fastq.txt testdata.fastq/testdata.fastq.3gene_reads > testdata.fastq/testdata.fastq.3gene_summary
+# Stage compile_all_results
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;
+# ########## Finished at Thu Jan 16 17:26:28 CST 2025 Duration = 1 minutes, 20.383 seconds ###########
+
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 21:28:51 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/97261.log
+# Stage run_check
+# Stage get_fasta (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=16 ;
+# ################ Finished at Thu Jan 16 21:28:52 CST 2025 Duration = 0.958 seconds #################
+
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 21:34:30 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/98961.log
+# Stage run_check
+# Stage get_fasta (testdata)
+# Stage minimap2_transcriptome (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t 16 -x map-ont -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa testdata.fastq/testdata.fastq.fasta > testdata.fastq/testdata.fastq.paf ;
+# Stage filter_transcripts (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/process_transcriptome_align_table testdata.fastq/testdata.fastq.paf 1000 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab > testdata.fastq/testdata.fastq.txt
+# Stage extract_fusion_sequences (testdata)
+cat testdata.fastq/testdata.fastq.txt | awk '{print $1}' > testdata.fastq/testdata.fastq.fusions.fa.temp ;                 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat in=testdata.fastq/testdata.fastq.fasta out=stdout.fasta fastawrap=0 | /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/extract_seq_from_fasta testdata.fastq/testdata.fastq.fusions.fa.temp > testdata.fastq/testdata.fastq.fusions.fa ;                 rm testdata.fastq/testdata.fastq.fusions.fa.temp ;
+# Stage minimap2_genome (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t 16 -x splice -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa testdata.fastq/testdata.fastq.fusions.fa > testdata.fastq/testdata.fastq_genome.paf; 	   grep $'\t+\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",",$3","$3+100",",  $8","$9-$4+$3+100"," }' > testdata.fastq/testdata.fastq_genome.psl ; 	   grep $'\t-\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",", $2-$4","$2-$4+100",", $8","$9-$4+$3+100"," }' >> testdata.fastq/testdata.fastq_genome.psl ;
+# Stage make_fasta_reads_table (testdata)
+echo  -e "transcript	break_min	break_max	fusion_genes	spanning_pairs	spanning_reads" > testdata.fastq/testdata.fastq.reads ;                  awk '{ print $1"	"$2"	"$3"	"$4"	"0"	"1}' testdata.fastq/testdata.fastq.txt | sort -u  >> testdata.fastq/testdata.fastq.reads
+# Stage get_final_list (testdata)
+if [ ! -s testdata.fastq/testdata.fastq_genome.psl ] ; then touch testdata.fastq/testdata.fastq.summary ; else  /usr/bin/R --vanilla --args testdata.fastq/testdata.fastq_genome.psl testdata.fastq/testdata.fastq.reads /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt  10000 NoSupport,PotentialReadThrough 50 testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/make_final_table.R ; fi;
+# Stage report_3_gene_fusions (testdata)
+/home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table testdata.fastq/testdata.fastq.summary testdata.fastq/testdata.fastq.txt testdata.fastq/testdata.fastq.3gene_reads > testdata.fastq/testdata.fastq.3gene_summary
+# Stage compile_all_results
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;
+# ########## Finished at Thu Jan 16 21:35:53 CST 2025 Duration = 1 minutes, 23.680 seconds ###########
+
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 21:53:27 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/108014.log
+# Stage run_check
+# Stage get_fasta (testdata)
+# Stage minimap2_transcriptome (testdata)
+# Stage filter_transcripts (testdata)
+# Stage extract_fusion_sequences (testdata)
+# Stage minimap2_genome (testdata)
+# Stage make_fasta_reads_table (testdata)
+# Stage get_final_list (testdata)
+# Stage report_3_gene_fusions (testdata)
+# Stage compile_all_results
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;
+# ################ Finished at Thu Jan 16 21:53:29 CST 2025 Duration = 1.293 seconds #################
+
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 21:57:22 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/111181.log
+# Stage run_check
+# Stage get_fasta (testdata)
+# Stage minimap2_transcriptome (testdata)
+# Stage filter_transcripts (testdata)
+# Stage extract_fusion_sequences (testdata)
+# Stage minimap2_genome (testdata)
+# Stage make_fasta_reads_table (testdata)
+# Stage get_final_list (testdata)
+# Stage report_3_gene_fusions (testdata)
+# Stage compile_all_results
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;
+# ################ Finished at Thu Jan 16 21:57:23 CST 2025 Duration = 1.229 seconds #################
+
+
+
+####################################################################################################
+# Starting pipeline at Thu Jan 16 22:02:13 CST 2025
+# Input files:  /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz
+# Output Log:  .bpipe/logs/114257.log
+# Stage run_check
+# Stage get_fasta (testdata)
+# Stage minimap2_transcriptome (testdata)
+# Stage filter_transcripts (testdata)
+# Stage extract_fusion_sequences (testdata)
+# Stage minimap2_genome (testdata)
+# Stage make_fasta_reads_table (testdata)
+# Stage get_final_list (testdata)
+# Stage report_3_gene_fusions (testdata)
+# Stage compile_all_results
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ;
+# ################ Finished at Thu Jan 16 22:02:15 CST 2025 Duration = 1.248 seconds #################
+

@@ -1,0 +1,1633 @@
+bpipe.Runner	[1]	INFO	|9:34:29 Starting 
+bpipe.Runner	[1]	INFO	|9:34:29 OS: Linux (4.18.0-15-generic) Java: 11.0.13 Vendor: Ubuntu 
+bpipe.Runner	[1]	INFO	|9:34:29 Initializing plugins ... 
+bpipe.Config	[1]	INFO	|9:34:29 No plugins directory found: /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/.bpipe/plugins 
+bpipe.Runner	[1]	INFO	|9:34:29 Reading user config ...  
+bpipe.Config	[1]	INFO	|9:34:29 No configuration file found in same dir as pipeline file /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/bpipe.config 
+bpipe.Config	[1]	INFO	|9:34:29 No local configuration file found 
+bpipe.Utils	[32]	INFO	|9:34:29 Read config from /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bpipe-0.9.9.2/bin/../bpipe.config executed in 0.222 seconds 
+bpipe.Utils	[1]	INFO	|9:34:29 Read user config executed in 0.328 seconds 
+bpipe.Runner	[1]	INFO	|9:34:29 Loading tool database ...  
+bpipe.ToolDatabase	[33]	INFO	|9:34:29 Loading tool database from user configuration 
+bpipe.Concurrency	[35]	INFO	|9:34:29 Creating thread pool with 64 threads to execute parallel pipelines 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Configuring notifications 
+bpipe.Dependencies	[37]	INFO	|9:34:29 No cached output graph (outputGraph2.ser) available: will be computed from property files 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Trying class name file for notification channel file 
+bpipe.Runner	[1]	INFO	|9:34:29 No CLI parameters specified 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool samtools 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool bwa 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool bowtie 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool fastqc 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool coverageBed 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool fastx_clipper 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool convert2annovar.pl 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool summarize_annovar.pl 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool bowtie2 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool GenomeAnalysisTK 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool MarkDuplicates 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool signalp 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool variant_effect_predictor.pl 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool igvtools 
+bpipe.Tool	[33]	INFO	|9:34:29 Configured meta data about tool ls 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Unable to create notification channel using class file: java.lang.ClassNotFoundException: file 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Trying class name bpipe.FILENotificationChannel for notification channel file 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Unable to create notification channel using class bpipe.FILENotificationChannel: java.lang.ClassNotFoundException: bpipe.FILENotificationChannel 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Trying class name bpipe.file for notification channel file 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Unable to create notification channel using class bpipe.file: java.lang.ClassNotFoundException: bpipe.file 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Trying class name bpipe.FileNotificationChannel for notification channel file 
+bpipe.NotificationManager	[36]	INFO	|9:34:29 Successfully created notification channel using class bpipe.FileNotificationChannel 
+bpipe.Runner	[1]	INFO	|9:34:29 Parsing script ...  
+bpipe.Runner	[1]	INFO	|9:34:29 Run ...  
+bpipe.Pipeline	[1]	INFO	|9:34:30 Evaluating library file /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFA_stages.groovy 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Evaluating library file /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools.groovy 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable run_check 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable prepare_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable cat_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_unmapped 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_assembly_unmapped 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable run_assembly 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_transcripts_to_annotation 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_reads_to_annotation 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable filter_transcripts 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable extract_fusion_sequences 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable map_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_spanning_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable make_simple_reads_table 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable make_fasta_reads_table 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable merge_assembly_and_unmapped_reads_candidates 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_transcripts_to_genome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_final_list 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable compile_all_results 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable run_check 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable prepare_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable cat_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_unmapped 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_assembly_unmapped 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable run_assembly 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_transcripts_to_annotation 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_reads_to_annotation 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable filter_transcripts 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable extract_fusion_sequences 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable map_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_spanning_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable make_simple_reads_table 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable make_fasta_reads_table 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable merge_assembly_and_unmapped_reads_candidates 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_transcripts_to_genome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_final_list 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable compile_all_results 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_fasta 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable minimap2_transcriptome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable minimap2_genome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable report_3_gene_fusions 
+bpipe.Pipeline	[1]	WARNING	|9:34:30 Pipeline folder /home/renzt/bpipes could not be found 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Skip loading /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools.groovy (already loaded) 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Skip loading /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/JAFFA_stages.groovy (already loaded) 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Running with input [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable run_check 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable prepare_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable cat_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_unmapped 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_assembly_unmapped 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable run_assembly 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_transcripts_to_annotation 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_reads_to_annotation 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable filter_transcripts 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable extract_fusion_sequences 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable map_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_spanning_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable make_simple_reads_table 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable make_fasta_reads_table 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable merge_assembly_and_unmapped_reads_candidates 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable align_transcripts_to_genome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_final_list 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable compile_all_results 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable get_fasta 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable minimap2_transcriptome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable minimap2_genome 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable report_3_gene_fusions 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found closure variable common_steps 
+bpipe.Pipeline	[1]	WARNING	|9:34:30 Pipeline folder /home/renzt/bpipes could not be found 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: args 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference args is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: codeBase 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference codeBase is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: VERSION 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference VERSION is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: bpipe 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference bpipe is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: velveth 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference velveth is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: velvetg 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference velvetg is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: oases 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference oases is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: trimmomatic 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference trimmomatic is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: samtools 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference samtools is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: bowtie2 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference bowtie2 is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: bowtie2_build 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference bowtie2_build is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: blat 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference blat is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: dedupe 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference dedupe is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: reformat 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference reformat is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: extract_seq_from_fasta 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference extract_seq_from_fasta is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: make_simple_read_table 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference make_simple_read_table is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: blastn 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference blastn is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: minimap2 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference minimap2 is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: process_transcriptome_align_table 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference process_transcriptome_align_table is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: make_3_gene_fusion_table 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference make_3_gene_fusion_table is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: R 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference R is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: refBase 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference refBase is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: fastaBase 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference fastaBase is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: maskedBase 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference maskedBase is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: transBase 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference transBase is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: readLayout 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference readLayout is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: genome 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference genome is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: annotation 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference annotation is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: genomeFasta 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference genomeFasta is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: fastqInputFormat 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference fastqInputFormat is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: fastaSuffix 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference fastaSuffix is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: fastaInputFormat 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference fastaInputFormat is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: outputName 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference outputName is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: jaffa_output 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference jaffa_output is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: scores 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference scores is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: minlen 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference minlen is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: minQScore 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference minQScore is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: Ks 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference Ks is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: Kmerge 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference Kmerge is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: transLength 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference transLength is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: blast_options 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference blast_options is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: blat_options 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference blat_options is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: gapSize 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference gapSize is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: finalGapSize 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference finalGapSize is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: exclude 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference exclude is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: reassign_dist 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference reassign_dist is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: mapParams 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference mapParams is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: overHang 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference overHang is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: blast_out_fmt 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference blast_out_fmt is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: maskedGenome 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference maskedGenome is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: transFasta 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference transFasta is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: transTable 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference transTable is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: knownTable 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference knownTable is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: R_get_final_list 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference R_get_final_list is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: R_get_spanning_reads_script 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference R_get_spanning_reads_script is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: R_compile_results_script 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference R_compile_results_script is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: oases_assembly_script 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference oases_assembly_script is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: get_fusion_seqs 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference get_fusion_seqs is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: run_check 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference run_check is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: prepare_reads 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference prepare_reads is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: cat_reads 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference cat_reads is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: get_unmapped 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference get_unmapped is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: get_assembly_unmapped 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference get_assembly_unmapped is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: run_assembly 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference run_assembly is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: align_transcripts_to_annotation 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference align_transcripts_to_annotation is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: align_reads_to_annotation 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference align_reads_to_annotation is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: filter_transcripts 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference filter_transcripts is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: extract_fusion_sequences 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference extract_fusion_sequences is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: map_reads 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference map_reads is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: get_spanning_reads 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference get_spanning_reads is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: make_simple_reads_table 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference make_simple_reads_table is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: make_fasta_reads_table 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference make_fasta_reads_table is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: merge_assembly_and_unmapped_reads_candidates 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference merge_assembly_and_unmapped_reads_candidates is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: align_transcripts_to_genome 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference align_transcripts_to_genome is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: get_final_list 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference get_final_list is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: compile_all_results 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference compile_all_results is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: get_fasta 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference get_fasta is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: minimap2_transcriptome 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference minimap2_transcriptome is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: minimap2_genome 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference minimap2_genome is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: report_3_gene_fusions 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference report_3_gene_fusions is overridden by local reference 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Loaded external reference: common_steps 
+bpipe.Pipeline	[1]	INFO	|9:34:30 External reference common_steps is overridden by local reference 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Found * pattern at [], hash at [] and % at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Sorted: [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 % groups are at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Result is [pattern:([^/]*?)\.gz, splits:[0]] 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Joiners for pipeline 500885941 = [bpipe.PipelineCategory$_plus_closure3@427b5f92, bpipe.PipelineCategory$_plus_closure3@24bdb479, bpipe.PipelineCategory$_plus_closure3@7e3f95fe, bpipe.PipelineCategory$_plus_closure3@34625ccd, bpipe.PipelineCategory$_plus_closure3@2c7d121c, bpipe.PipelineCategory$_plus_closure3@3dddefd8, bpipe.PipelineCategory$_plus_closure3@427b5f92, bpipe.PipelineCategory$_plus_closure3@24bdb479, bpipe.PipelineCategory$_plus_closure3@7e3f95fe, bpipe.PipelineCategory$_plus_closure3@34625ccd, bpipe.PipelineCategory$_plus_closure3@2c7d121c, bpipe.PipelineCategory$_plus_closure3@3dddefd8, bpipe.PipelineCategory$_plus_closure3@65aa6596] 
+bpipe.Pipeline	[1]	INFO	|9:34:30 Running segment with inputs /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking input (s) /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.OutputMetaData	[41]	INFO	|9:34:30 Reading property file .bpipe/outputs/run_check.checks.properties 
+bpipe.OutputMetaData	[39]	INFO	|9:34:30 Reading property file .bpipe/outputs/get_final_list.testdata.fastq_testdata.fastq.summary.properties 
+bpipe.OutputMetaData	[38]	INFO	|9:34:30 Reading property file .bpipe/outputs/minimap2_genome.testdata.fastq_testdata.fastq_genome.psl.properties 
+bpipe.OutputMetaData	[42]	INFO	|9:34:30 Reading property file .bpipe/outputs/extract_fusion_sequences.testdata.fastq_testdata.fastq.fusions.fa.properties 
+bpipe.OutputMetaData	[40]	INFO	|9:34:30 Reading property file .bpipe/outputs/minimap2_transcriptome.testdata.fastq_testdata.fastq.paf.properties 
+bpipe.OutputMetaData	[41]	INFO	|9:34:30 Reading property file .bpipe/outputs/report_3_gene_fusions.testdata.fastq_testdata.fastq.3gene_reads.properties 
+bpipe.OutputMetaData	[39]	INFO	|9:34:30 Reading property file .bpipe/outputs/make_fasta_reads_table.testdata.fastq_testdata.fastq.reads.properties 
+bpipe.OutputMetaData	[38]	INFO	|9:34:30 Reading property file .bpipe/outputs/minimap2_genome.testdata.fastq_testdata.fastq_genome.paf.properties 
+bpipe.OutputMetaData	[42]	INFO	|9:34:30 Reading property file .bpipe/outputs/report_3_gene_fusions.testdata.fastq_testdata.fastq.3gene_summary.properties 
+bpipe.OutputMetaData	[41]	INFO	|9:34:30 Reading property file .bpipe/outputs/filter_transcripts.testdata.fastq_testdata.fastq.txt.properties 
+bpipe.Utils	[1]	INFO	|9:34:30 Output folder scan (concurrency=5) executed in 0.033 seconds 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0.001 seconds 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 2 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 2 remaining outputs from 10 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq.txt 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq.txt = 1737019514847 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 1 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 1 remaining outputs from 8 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Dependency testdata.fastq/testdata.fastq.fasta for testdata.fastq/testdata.fastq.fusions.fa is external root input 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq.fusions.fa = 1737019515327 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 1 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 1 remaining outputs from 7 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq_genome.paf = 1737019515643 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq_genome.psl 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq_genome.psl = 1737019586829 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 2 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 2 remaining outputs from 6 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq.reads 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq.reads = 1737019586929 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 1 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 1 remaining outputs from 4 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq.summary 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq.summary = 1737019587061 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 1 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 1 remaining outputs from 3 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq.3gene_summary = 1737019587201 
+bpipe.Dependencies	[1]	INFO	|9:34:30 New entry for testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Maxtimestamp for testdata.fastq/testdata.fastq.3gene_reads = 1737019587201 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 2 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 2 remaining outputs from 2 total outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 0 remaining outputs from 0 total outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 0 remaining outputs from 0 total outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.3gene_summary / entry 1648458262  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.3gene_summary vs input testdata.fastq/testdata.fastq.summary 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.3gene_summary vs input testdata.fastq/testdata.fastq.txt 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.3gene_summary is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.3gene_reads / entry 123337428  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.3gene_reads vs input testdata.fastq/testdata.fastq.summary 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.3gene_reads vs input testdata.fastq/testdata.fastq.txt 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.3gene_reads is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.summary / entry 820878444  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.summary vs input testdata.fastq/testdata.fastq_genome.psl 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.summary vs input testdata.fastq/testdata.fastq.reads 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.summary is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.reads / entry 2016038911  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.reads vs input testdata.fastq/testdata.fastq.txt 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.reads vs input testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.reads is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 0 remaining outputs from 0 total outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq_genome.paf / entry 1187410086  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq_genome.paf vs input testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq_genome.paf is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq_genome.psl / entry 1509713998  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq_genome.psl vs input testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq_genome.psl is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.fusions.fa / entry 95322593  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.fusions.fa vs input testdata.fastq/testdata.fastq.txt 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.fusions.fa is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.txt / entry 802255644  
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking timestamp of testdata.fastq/testdata.fastq.txt vs input testdata.fastq/testdata.fastq.paf 
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.txt is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Utils	[1]	INFO	|9:34:30 Calculate unique inputs executed in 0 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 output groups 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Subtracting 0 remaining outputs from 0 total outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Dependencies	[1]	INFO	|9:34:30 There are 0 remaining outputs 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ------ checks / entry 1525114112 ------- 
+bpipe.Dependencies	[1]	INFO	|9:34:30 checks is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30  testdata.fastq/testdata.fastq.paf / entry 1617156106  
+bpipe.Dependencies	[1]	INFO	|9:34:30 testdata.fastq/testdata.fastq.paf is newer than input files 
+bpipe.Dependencies	[1]	INFO	|9:34:30 ====Finished Output Graph===== 
+bpipe.Utils	[1]	INFO	|9:34:30 Index output graph executed in 0.001 seconds 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Setting or creating a delegate for context 24097622 body 1807894765/java.lang.Class in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@78461bc4 overriding type java.lang.Class in thread 1 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:30 Using high sensitivity file watcher for . 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking input (s) /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Setting or creating a delegate for context 1535116392 body 773348567/java.lang.Class in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@7e1a1da6 overriding type java.lang.Class in thread 1 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:30 Initialising watcher for . with 12 paths} 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking input (s) /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineStage	[1]	INFO	|9:34:30 Stage run_check : INPUT=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz OUTPUT=testdata.fastq.gz.run_check 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Setting or creating a delegate for context 2022285740 body 641882263/JAFFA_stages_bpipe in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@3aee3976 overriding type JAFFA_stages_bpipe in thread 1 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Producing [checks] from bpipe.PipelineContext@7889a1ac 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Setting or creating a delegate for context 2022285740 body 1379207867/JAFFA_stages_bpipe$_run_closure1 in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@5ebd56e9 overriding type JAFFA_stages_bpipe$_run_closure1 in thread 1 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:30 Path commandlog.txt was updated / created 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Probing command using inputs /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Using previously set output: [checks] 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Tracking outputs referenced=[[]] inferred=[[checks]] for command 
+            echo "Running JAFFA version 2.4_dev" ;
+            echo "Checking for required data files..." ;
+            for i in /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/Masked_hg38.1.bt2 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.1.bt2 ; 
+                 do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ; 
+            echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;
+            echo "All looking good" ;
+            echo "running JAFFA version 2.4_dev.. checks passed" > checks 
+         
+bpipe.Command	[1]	INFO	|9:34:30 Checking for configuration for command checks 
+bpipe.Command	[1]	INFO	|9:34:30 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Checking actual resolved inputs [] 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Skip command start for echo "Running JAFFA version 2.4_dev" ;             echo "Checking for required data files..." ;             for i in /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/Masked_hg38.1.bt2 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.1.bt2 ;                   do ls $i 2>/dev/null || { echo "CAN'T FIND $i..." ;              echo "PLEASE DOWNLOAD and/or FIX PATH... STOPPING NOW" ; exit 1  ; } ; done ;             echo "All looking good" ;             echo "running JAFFA version 2.4_dev.. checks passed" > checks due to probe mode 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Finished probe 
+bpipe.Utils	[1]	INFO	|9:34:30 ===== Check checks ===== 
+bpipe.Utils	[1]	INFO	|9:34:30 Output newer than all inputs (quick check) 
+bpipe.Utils	[1]	INFO	|9:34:30 ===== Check checks ===== 
+bpipe.Utils	[1]	INFO	|9:34:30 Output newer than all inputs (quick check) 
+bpipe.Dependencies	[1]	INFO	|9:34:30 No missing / older files from inputs: [checks, checks] are up to date 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Skipping produce body 
+bpipe.PipelineContext	[1]	INFO	|9:34:30 Adding outputs [checks] as a result of produce 
+bpipe.PipelineStage	[1]	INFO	|9:34:30 Stage run_check returned null as default inputs for next stage 
+bpipe.PipelineStage	[1]	INFO	|9:34:30 Inferring nextInputs from explicit output as [checks] 
+bpipe.PipelineStage	[1]	INFO	|9:34:30 Setting next inputs [checks] on stage 504478805, context 2022285740 in thread 1 
+bpipe.PipelineStage	[1]	INFO	|9:34:30 Files modified since 1737034470428 in run_check are [:] 
+bpipe.PipelineStage	[1]	INFO	|9:34:30 Checking files: [checks] 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking output (s) [checks] 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file checks 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Checking that outputs [checks] exist 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking input (s) [checks] 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file checks 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Next inputs from stage = [checks] 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Checking inputs for next stage:  [checks] 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking input (s) [checks] 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file checks 
+bpipe.Dependencies	[1]	INFO	|9:34:30 Checking input (s) [checks] 
+bpipe.Dependencies	[1]	INFO	|9:34:30  Checking file checks 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Setting or creating a delegate for context 137123763 body 1541942595/java.lang.Class in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@5ea502e0 overriding type java.lang.Class in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 multiply on input [checks] with pattern %.gz 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Found * pattern at [], hash at [] and % at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Sorted: [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 % groups are at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Result is [pattern:([^/]*?)\.gz, splits:[0]] 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Checking input split match on [checks] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Found * pattern at [], hash at [] and % at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Sorted: [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 % groups are at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Result is [pattern:([^/]*?)\.gz, splits:[0]] 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Checking input split match on /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Found * pattern at [], hash at [] and % at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Sorted: [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 % groups are at [0] 
+bpipe.InputSplitter	[1]	INFO	|9:34:30 Result is [pattern:([^/]*?)\.gz, splits:[0]] 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Found input split match for pattern %.gz on /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Created pipeline stage 36550900 for parallel block 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Processing segment 1705665942 
+bpipe.PipelineCategory	[1]	INFO	|9:34:30 Creating pipeline to run parallel segment testdata.fastq with files [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]. Branch filter = [] 
+bpipe.Concurrency	[1]	INFO	|9:34:30 Register resource requestor bpipe.Pipeline@60afd40d 
+bpipe.Concurrency	[1]	INFO	|9:34:30 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Setting output [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] on context 1978591383 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using previously set output: [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.PipelineCategory	[45]	INFO	|9:34:30 Adding dummy prior stage for thread 45 with outputs : /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.Pipeline	[45]	INFO	|9:34:30 Running segment with inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 1682642943 body 1705665942/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@38f87f64 overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Stage get_fasta (testdata) : INPUT=[/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] OUTPUT=testdata.fastq.gz.get_fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 1820325981 body 1170788511/script17370344699461653772785 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@7d62323f overriding type script17370344699461653772785 in thread 45 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:30 Path commandlog.txt was updated / created 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 No inputs resolved by input wrappers: outputs based on default testdata.fastq.gz.get_fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.gz.get_fasta) 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:30 Using high sensitivity file watcher for testdata.fastq 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Producing [testdata.fastq.fasta] from bpipe.PipelineContext@6c7ff85d 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 1820325981 body 149190703/script17370344699461653772785$_run_closure1 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@2257fcfe overriding type script17370344699461653772785$_run_closure1 in thread 45 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:30 Initialising watcher for testdata.fastq with 11 paths} 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Probing command using inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using previously set output: [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Computing threads based on parallel branch count of 1 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using only 32 instead of configured 192 because the configured value exceeds the number of available cores 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.fasta]] for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=__bpipe_lazy_resource_threads__ ; 
+bpipe.Command	[45]	INFO	|9:34:30 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat 
+bpipe.Command	[45]	INFO	|9:34:30 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Checking actual resolved inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Skip command start for /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat ignorebadquality=t in=/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz out=testdata.fastq/testdata.fastq.fasta threads=__bpipe_lazy_resource_threads__ ; due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Finished probe 
+bpipe.Utils	[45]	INFO	|9:34:30 ===== Check testdata.fastq/testdata.fastq.fasta ===== 
+bpipe.Utils	[45]	INFO	|9:34:30 Output newer than all inputs (quick check) 
+bpipe.Utils	[45]	INFO	|9:34:30 ===== Check testdata.fastq/testdata.fastq.fasta ===== 
+bpipe.Utils	[45]	INFO	|9:34:30 Output newer than all inputs (quick check) 
+bpipe.Dependencies	[45]	INFO	|9:34:30 No missing / older files from inputs: [testdata.fastq/testdata.fastq.fasta, testdata.fastq/testdata.fastq.fasta] are up to date 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Skipping produce body 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Adding outputs [testdata.fastq/testdata.fastq.fasta] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Stage get_fasta (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Setting next inputs [testdata.fastq/testdata.fastq.fasta] on stage 769150067, context 1820325981 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Files modified since 1737034470561 in get_fasta are [:] 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Checking files: [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking output (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineCategory	[45]	INFO	|9:34:30 Checking that outputs [testdata.fastq/testdata.fastq.fasta] exist 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineCategory	[45]	INFO	|9:34:30 Next inputs from stage = [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineCategory	[45]	INFO	|9:34:30 Checking inputs for next stage:  [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 1546333892 body 1037955032/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@68ccea8c overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 1192902018 body 746394140/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@1f6415a6 overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 1045006206 body 878861517/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@1bf7c34 overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 618721900 body 2118096382/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@bcecba8 overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 62585610 body 616412281/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@62f5384d overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 776046342 body 1115381650/java.lang.Class in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@666fcef overriding type java.lang.Class in thread 45 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Checking input (s) [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Dependencies	[45]	INFO	|9:34:30  Checking file testdata.fastq/testdata.fastq.fasta 
+bpipe.PipelineStage	[45]	INFO	|9:34:30 Stage minimap2_transcriptome (testdata) : INPUT=[testdata.fastq/testdata.fastq.fasta] OUTPUT=testdata.fastq.fasta.minimap2_transcriptome 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:30 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 997916277 body 1400973979/script17370344699461653772785 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@1c8f9aa4 overriding type script17370344699461653772785 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 No inputs resolved by input wrappers: outputs based on default testdata.fastq.fasta.minimap2_transcriptome 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.fasta.minimap2_transcriptome) 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Producing [testdata.fastq.paf] from bpipe.PipelineContext@3b7afe75 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 997916277 body 2138948483/script17370344699461653772785$_run_closure2 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Created new delegate bpipe.PipelineDelegate@286cd587 overriding type script17370344699461653772785$_run_closure2 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Probing command using inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Computing threads based on parallel branch count of 1 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using only 32 instead of configured 192 because the configured value exceeds the number of available cores 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using previously set output: [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Query for output 0 base result = testdata.fastq/testdata.fastq.paf 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.paf]] for command 
+           /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t __bpipe_lazy_resource_threads__ -x map-ont -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa testdata.fastq/testdata.fastq.fasta > testdata.fastq/testdata.fastq.paf ;
+         
+bpipe.Command	[45]	INFO	|9:34:30 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 
+bpipe.Command	[45]	INFO	|9:34:30 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Checking actual resolved inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Skip command start for /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t __bpipe_lazy_resource_threads__ -x map-ont -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa testdata.fastq/testdata.fastq.fasta > testdata.fastq/testdata.fastq.paf ; due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Finished probe 
+bpipe.Utils	[45]	INFO	|9:34:30 ===== Check testdata.fastq/testdata.fastq.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:30 Checking testdata.fastq/testdata.fastq.paf against inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:30 Check testdata.fastq/testdata.fastq.fasta : 1737034132081 >  testdata.fastq/testdata.fastq.paf : 1737019508027 
+bpipe.Utils	[45]	INFO	|9:34:30 ===== Check testdata.fastq/testdata.fastq.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:30 Checking testdata.fastq/testdata.fastq.paf against inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:30 Check testdata.fastq/testdata.fastq.fasta : 1737034132081 >  testdata.fastq/testdata.fastq.paf : 1737019508027 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Setting or creating a delegate for context 997916277 body 2138948483/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Existing delegate bpipe.PipelineDelegate@286cd587 has type bpipe.PipelineDelegate in thread 45. Setting new context 997916277 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Producing from inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Computing threads based on parallel branch count of 1 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using only 32 instead of configured 192 because the configured value exceeds the number of available cores 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:30 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Using previously set output: [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Query for output 0 base result = testdata.fastq/testdata.fastq.paf 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.paf]] for command 
+           /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t __bpipe_lazy_resource_threads__ -x map-ont -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.fa testdata.fastq/testdata.fastq.fasta > testdata.fastq/testdata.fastq.paf ;
+         
+bpipe.Command	[45]	INFO	|9:34:30 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 
+bpipe.Command	[45]	INFO	|9:34:30 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:30 Checking actual resolved inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:30 ===== Check testdata.fastq/testdata.fastq.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:30 Checking testdata.fastq/testdata.fastq.paf against inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:30 Check testdata.fastq/testdata.fastq.fasta : 1737034132081 >  testdata.fastq/testdata.fastq.paf : 1737019508027 
+bpipe.Utils	[45]	INFO	|9:34:30 ===== Check testdata.fastq/testdata.fastq.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:30 Checking testdata.fastq/testdata.fastq.paf against inputs [testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:30 Check testdata.fastq/testdata.fastq.fasta : 1737034132081 >  testdata.fastq/testdata.fastq.paf : 1737019508027 
+bpipe.Dependencies	[45]	INFO	|9:34:30 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf] 
+bpipe.CommandManager	[45]	INFO	|9:34:30 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:34:31 Created bpipe command id 25 
+bpipe.Concurrency	[45]	INFO	|9:34:31 Thread Thread-8 requesting for -1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:34:31 There are 1 registered bidders with 1 currently bidding, will distribute resources at 1 
+bpipe.Concurrency	[45]	INFO	|9:34:31 Taking over resource allocation because requested/bidders = 1 / 1 
+bpipe.Concurrency	[45]	INFO	|9:34:31 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:34:31 Dividing up 31 free resource permits among 1 requestors = 31 
+bpipe.Concurrency	[45]	INFO	|9:34:31 31 is too much for requestor 0: allocating 15  
+bpipe.Concurrency	[45]	INFO	|9:34:31 Thread Thread-8 allocated 16 threads resources after 14 ms 
+bpipe.Concurrency	[45]	INFO	|9:34:31 Thread Thread-8 acquired resource threads in amount 16 
+bpipe.Command	[48]	INFO	|9:34:31 Command 25 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:31 Path testdata.fastq.paf was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:31 Waiting for command to complete before releasing 1 resources 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:31 Path commandlog.txt was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:33 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.Concurrency	[1]	INFO	|9:34:35 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:38 Releasing 1 resources 
+bpipe.Concurrency	[45]	INFO	|9:34:38 Thread Thread-8 releasing 16 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:38 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Adding outputs [testdata.fastq/testdata.fastq.paf] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:34:38 Stage minimap2_transcriptome (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:34:38 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineStage	[45]	INFO	|9:34:38 Setting next inputs [testdata.fastq/testdata.fastq.paf] on stage 1973953984, context 997916277 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:38 Files modified since 1737034470940 in minimap2_transcriptome are [testdata.fastq.paf:1737034471535] 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Not overwriting meta data for testdata.fastq/testdata.fastq.paf because it was not created or modified by stage minimap2_transcriptome 
+bpipe.PipelineStage	[45]	INFO	|9:34:38 Checking files: [testdata.fastq/testdata.fastq.paf] 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Checking output (s) [testdata.fastq/testdata.fastq.paf] 
+bpipe.Dependencies	[45]	INFO	|9:34:38  Checking file testdata.fastq/testdata.fastq.paf 
+bpipe.PipelineCategory	[45]	INFO	|9:34:38 Checking that outputs [testdata.fastq/testdata.fastq.paf] exist 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Checking input (s) [testdata.fastq/testdata.fastq.paf] 
+bpipe.Dependencies	[45]	INFO	|9:34:38  Checking file testdata.fastq/testdata.fastq.paf 
+bpipe.PipelineCategory	[45]	INFO	|9:34:38 Next inputs from stage = [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineCategory	[45]	INFO	|9:34:38 Checking inputs for next stage:  [testdata.fastq/testdata.fastq.paf] 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Checking input (s) [testdata.fastq/testdata.fastq.paf] 
+bpipe.Dependencies	[45]	INFO	|9:34:38  Checking file testdata.fastq/testdata.fastq.paf 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Checking input (s) [testdata.fastq/testdata.fastq.paf] 
+bpipe.Dependencies	[45]	INFO	|9:34:38  Checking file testdata.fastq/testdata.fastq.paf 
+bpipe.PipelineStage	[45]	INFO	|9:34:38 Stage filter_transcripts (testdata) : INPUT=[testdata.fastq/testdata.fastq.paf] OUTPUT=testdata.fastq.paf.filter_transcripts 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:38 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Setting or creating a delegate for context 1886253263 body 1157943921/JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Created new delegate bpipe.PipelineDelegate@6d0a96b6 overriding type JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 No inputs resolved by input wrappers: outputs based on default testdata.fastq.paf.filter_transcripts 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.paf.filter_transcripts) 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Producing [testdata.fastq/testdata.fastq.txt] from bpipe.PipelineContext@706df0cf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Setting or creating a delegate for context 1886253263 body 1295895369/JAFFA_stages_bpipe$_run_closure9 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Created new delegate bpipe.PipelineDelegate@22405cfc overriding type JAFFA_stages_bpipe$_run_closure9 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Probing command using inputs [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 From clause searching for inputs matching spec [.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Input list to check:  [[testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.paf], [], [], [], [], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Check testdata.fastq/testdata.fastq.paf ends with .paf 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Matched : [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Checking [testdata.fastq/testdata.fastq.paf] vs .paf Y 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Found inputs [testdata.fastq/testdata.fastq.paf] for spec [.paf] 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Using previously set output: [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Query for output 0 base result = testdata.fastq/testdata.fastq.txt 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.txt]] for command 
+	    /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/process_transcriptome_align_table testdata.fastq/testdata.fastq.paf 1000 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab > testdata.fastq/testdata.fastq.txt
+             
+bpipe.Command	[45]	INFO	|9:34:38 Checking for configuration for command filter_transcripts 
+bpipe.Command	[45]	INFO	|9:34:38 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Checking actual resolved inputs [testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Skip command start for /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/process_transcriptome_align_table testdata.fastq/testdata.fastq.paf 1000 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab > testdata.fastq/testdata.fastq.txt due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Finished probe 
+bpipe.Utils	[45]	INFO	|9:34:38 ===== Check testdata.fastq/testdata.fastq.txt ===== 
+bpipe.Utils	[45]	INFO	|9:34:38 Checking testdata.fastq/testdata.fastq.txt against inputs [testdata.fastq/testdata.fastq.paf] 
+bpipe.Utils	[45]	INFO	|9:34:38 Check testdata.fastq/testdata.fastq.paf : 1737034471535 >  testdata.fastq/testdata.fastq.txt : 1737019514847 
+bpipe.Utils	[45]	INFO	|9:34:38 ===== Check testdata.fastq/testdata.fastq.txt ===== 
+bpipe.Utils	[45]	INFO	|9:34:38 Checking testdata.fastq/testdata.fastq.txt against inputs [testdata.fastq/testdata.fastq.paf] 
+bpipe.Utils	[45]	INFO	|9:34:38 Check testdata.fastq/testdata.fastq.paf : 1737034471535 >  testdata.fastq/testdata.fastq.txt : 1737019514847 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Setting or creating a delegate for context 1886253263 body 1295895369/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Existing delegate bpipe.PipelineDelegate@22405cfc has type bpipe.PipelineDelegate in thread 45. Setting new context 1886253263 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Producing from inputs [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 From clause searching for inputs matching spec [.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Input list to check:  [[testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.paf], [], [], [], [], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Check testdata.fastq/testdata.fastq.paf ends with .paf 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Matched : [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Checking [testdata.fastq/testdata.fastq.paf] vs .paf Y 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Found inputs [testdata.fastq/testdata.fastq.paf] for spec [.paf] 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:38 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Using previously set output: [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Query for output 0 base result = testdata.fastq/testdata.fastq.txt 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.txt]] for command 
+	    /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/process_transcriptome_align_table testdata.fastq/testdata.fastq.paf 1000 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab > testdata.fastq/testdata.fastq.txt
+             
+bpipe.Command	[45]	INFO	|9:34:38 Checking for configuration for command filter_transcripts 
+bpipe.Command	[45]	INFO	|9:34:38 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:38 Checking actual resolved inputs [testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf] 
+bpipe.Utils	[45]	INFO	|9:34:38 ===== Check testdata.fastq/testdata.fastq.txt ===== 
+bpipe.Utils	[45]	INFO	|9:34:38 Checking testdata.fastq/testdata.fastq.txt against inputs [testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf] 
+bpipe.Utils	[45]	INFO	|9:34:38 Check testdata.fastq/testdata.fastq.paf : 1737034471535 >  testdata.fastq/testdata.fastq.txt : 1737019514847 
+bpipe.Utils	[45]	INFO	|9:34:38 ===== Check testdata.fastq/testdata.fastq.txt ===== 
+bpipe.Utils	[45]	INFO	|9:34:38 Checking testdata.fastq/testdata.fastq.txt against inputs [testdata.fastq/testdata.fastq.paf, testdata.fastq/testdata.fastq.paf] 
+bpipe.Utils	[45]	INFO	|9:34:38 Check testdata.fastq/testdata.fastq.paf : 1737034471535 >  testdata.fastq/testdata.fastq.txt : 1737019514847 
+bpipe.Dependencies	[45]	INFO	|9:34:38 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt] 
+bpipe.CommandManager	[45]	INFO	|9:34:38 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:34:38 Created bpipe command id 27 
+bpipe.Concurrency	[45]	INFO	|9:34:38 Thread Thread-8 requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:34:38 There are 1 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[45]	INFO	|9:34:38 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[45]	INFO	|9:34:38 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:34:38 Thread Thread-8 allocated 1 threads resources after 1 ms 
+bpipe.Concurrency	[45]	INFO	|9:34:38 Thread Thread-8 acquired resource threads in amount 1 
+bpipe.Command	[52]	INFO	|9:34:38 Command 27 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:38 Path testdata.fastq.txt was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:38 Waiting for command to complete before releasing 1 resources 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:38 Path commandlog.txt was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:39 Releasing 1 resources 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:39 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Adding outputs [testdata.fastq/testdata.fastq.txt] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Stage filter_transcripts (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Setting next inputs [testdata.fastq/testdata.fastq.txt] on stage 1533419265, context 1886253263 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Files modified since 1737034478557 in filter_transcripts are [testdata.fastq.txt:1737034478612] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Not overwriting meta data for testdata.fastq/testdata.fastq.txt because it was not created or modified by stage filter_transcripts 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Checking files: [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking output (s) [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.txt 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq.txt]) 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 No explicit output on stage 1745754433 context 776046342 so output is nextInputs [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Setting output [testdata.fastq/testdata.fastq.txt] on context 776046342 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Setting next inputs [testdata.fastq/testdata.fastq.txt] on stage 1745754433, context 776046342 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034150701, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034473263, commandlog.txt:1737034478680] 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Checking files: [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking output (s) [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.txt 
+bpipe.PipelineCategory	[45]	INFO	|9:34:39 Checking that outputs [testdata.fastq/testdata.fastq.txt] exist 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking input (s) [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.txt 
+bpipe.PipelineCategory	[45]	INFO	|9:34:39 Next inputs from stage = [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineCategory	[45]	INFO	|9:34:39 Checking inputs for next stage:  [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking input (s) [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.txt 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking input (s) [testdata.fastq/testdata.fastq.txt] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.txt 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Stage extract_fusion_sequences (testdata) : INPUT=[testdata.fastq/testdata.fastq.txt] OUTPUT=testdata.fastq.txt.extract_fusion_sequences 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:39 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Setting or creating a delegate for context 516256116 body 544966217/JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Created new delegate bpipe.PipelineDelegate@7a2c36da overriding type JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 No inputs resolved by input wrappers: outputs based on default testdata.fastq.txt.extract_fusion_sequences 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.txt.extract_fusion_sequences) 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Producing [testdata.fastq/testdata.fastq.fusions.fa] from bpipe.PipelineContext@1ec57174 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Setting or creating a delegate for context 516256116 body 1007608718/JAFFA_stages_bpipe$_run_closure10 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Created new delegate bpipe.PipelineDelegate@55c3316f overriding type JAFFA_stages_bpipe$_run_closure10 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Probing command using inputs [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 From clause searching for inputs matching spec [.txt, .fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Input list to check:  [[testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.txt], [], [], [], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt ends with .txt 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking [testdata.fastq/testdata.fastq.txt] vs .txt Y 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.paf ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fasta ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking [testdata.fastq/testdata.fastq.fasta] vs .fasta Y 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Found inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] for spec [.txt, .fasta] 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Input 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.fusions.fa]] for command 
+                cat testdata.fastq/testdata.fastq.txt | awk '{print $1}' > testdata.fastq/testdata.fastq.fusions.fa.temp ;
+                /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat in=testdata.fastq/testdata.fastq.fasta out=stdout.fasta fastawrap=0 | /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/extract_seq_from_fasta testdata.fastq/testdata.fastq.fusions.fa.temp > testdata.fastq/testdata.fastq.fusions.fa ;
+                rm testdata.fastq/testdata.fastq.fusions.fa.temp ;
+             
+bpipe.Command	[45]	INFO	|9:34:39 Checking for configuration for command extract_fusion_sequences 
+bpipe.Command	[45]	INFO	|9:34:39 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking actual resolved inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Skip command start for cat testdata.fastq/testdata.fastq.txt | awk '{print $1}' > testdata.fastq/testdata.fastq.fusions.fa.temp ;                 /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat in=testdata.fastq/testdata.fastq.fasta out=stdout.fasta fastawrap=0 | /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/extract_seq_from_fasta testdata.fastq/testdata.fastq.fusions.fa.temp > testdata.fastq/testdata.fastq.fusions.fa ;                 rm testdata.fastq/testdata.fastq.fusions.fa.temp ; due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Finished probe 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq.fusions.fa ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq.fusions.fa against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.fusions.fa : 1737019515327 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq.fusions.fa ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq.fusions.fa against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.fusions.fa : 1737019515327 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.fusions.fa, testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Setting or creating a delegate for context 516256116 body 1007608718/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Existing delegate bpipe.PipelineDelegate@55c3316f has type bpipe.PipelineDelegate in thread 45. Setting new context 516256116 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Producing from inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 From clause searching for inputs matching spec [.txt, .fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Input list to check:  [[testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.txt], [], [], [], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt ends with .txt 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fasta ends with .txt 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] vs .txt Y 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fasta ends with .fasta 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Matched : [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] vs .fasta Y 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Found inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] for spec [.txt, .fasta] 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Input 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.fusions.fa]] for command 
+                cat testdata.fastq/testdata.fastq.txt | awk '{print $1}' > testdata.fastq/testdata.fastq.fusions.fa.temp ;
+                /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/reformat in=testdata.fastq/testdata.fastq.fasta out=stdout.fasta fastawrap=0 | /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/extract_seq_from_fasta testdata.fastq/testdata.fastq.fusions.fa.temp > testdata.fastq/testdata.fastq.fusions.fa ;
+                rm testdata.fastq/testdata.fastq.fusions.fa.temp ;
+             
+bpipe.Command	[45]	INFO	|9:34:39 Checking for configuration for command extract_fusion_sequences 
+bpipe.Command	[45]	INFO	|9:34:39 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking actual resolved inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq.fusions.fa ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq.fusions.fa against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.fusions.fa : 1737019515327 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq.fusions.fa ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq.fusions.fa against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.fasta] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.fusions.fa : 1737019515327 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.fusions.fa, testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.CommandManager	[45]	INFO	|9:34:39 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:34:39 Created bpipe command id 29 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:34:39 There are 1 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[45]	INFO	|9:34:39 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 allocated 1 threads resources after 1 ms 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 acquired resource threads in amount 1 
+bpipe.Command	[55]	INFO	|9:34:39 Command 29 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:39 File testdata.fastq.fusions.fa.temp was created in directory testdata.fastq 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:39 Path testdata.fastq.fusions.fa.temp was updated / created 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:39 Path testdata.fastq.fusions.fa was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:39 Waiting for command to complete before releasing 1 resources 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:39 Path commandlog.txt was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:39 Releasing 1 resources 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:39 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Adding outputs [testdata.fastq/testdata.fastq.fusions.fa] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Stage extract_fusion_sequences (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Setting next inputs [testdata.fastq/testdata.fastq.fusions.fa] on stage 1427820608, context 516256116 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Files modified since 1737034479063 in extract_fusion_sequences are [testdata.fastq.fusions.fa.temp:1737034479144, testdata.fastq.fusions.fa:1737034479152] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Not overwriting meta data for testdata.fastq/testdata.fastq.fusions.fa because it was not created or modified by stage extract_fusion_sequences 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Checking files: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking output (s) [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq.fusions.fa]) 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 No explicit output on stage 469229527 context 62585610 so output is nextInputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Setting output [testdata.fastq/testdata.fastq.fusions.fa] on context 62585610 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Setting next inputs [testdata.fastq/testdata.fastq.fusions.fa] on stage 469229527, context 62585610 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034150701, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034473263, commandlog.txt:1737034479216] 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Checking files: [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking output (s) [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.PipelineCategory	[45]	INFO	|9:34:39 Checking that outputs [testdata.fastq/testdata.fastq.fusions.fa] exist 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking input (s) [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.PipelineCategory	[45]	INFO	|9:34:39 Next inputs from stage = [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineCategory	[45]	INFO	|9:34:39 Checking inputs for next stage:  [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking input (s) [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Checking input (s) [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Dependencies	[45]	INFO	|9:34:39  Checking file testdata.fastq/testdata.fastq.fusions.fa 
+bpipe.PipelineStage	[45]	INFO	|9:34:39 Stage minimap2_genome (testdata) : INPUT=[testdata.fastq/testdata.fastq.fusions.fa] OUTPUT=testdata.fastq.fusions.fa.minimap2_genome 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:39 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Setting or creating a delegate for context 706370198 body 347091104/script17370344699461653772785 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Created new delegate bpipe.PipelineDelegate@667c3dfe overriding type script17370344699461653772785 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 No inputs resolved by input wrappers: outputs based on default testdata.fastq.fusions.fa.minimap2_genome 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.fusions.fa.minimap2_genome) 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Producing [testdata.fastq_genome.paf, testdata.fastq_genome.psl] from bpipe.PipelineContext@2a1a5a96 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Setting or creating a delegate for context 706370198 body 236463667/script17370344699461653772785$_run_closure3 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Created new delegate bpipe.PipelineDelegate@1e541f85 overriding type script17370344699461653772785$_run_closure3 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Probing command using inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Computing threads based on parallel branch count of 1 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using only 32 instead of configured 192 because the configured value exceeds the number of available cores 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 0 base result = testdata.fastq/testdata.fastq_genome.paf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 0 base result = testdata.fastq/testdata.fastq_genome.paf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 1 base result = testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 0 base result = testdata.fastq/testdata.fastq_genome.paf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 1 base result = testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl]] for command 
+	   /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t __bpipe_lazy_resource_threads__ -x splice -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa testdata.fastq/testdata.fastq.fusions.fa > testdata.fastq/testdata.fastq_genome.paf;
+	   grep $'\t+\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",",$3","$3+100",",  $8","$9-$4+$3+100"," }' > testdata.fastq/testdata.fastq_genome.psl ;
+	   grep $'\t-\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",", $2-$4","$2-$4+100",", $8","$9-$4+$3+100"," }' >> testdata.fastq/testdata.fastq_genome.psl ;
+         
+bpipe.Command	[45]	INFO	|9:34:39 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 
+bpipe.Command	[45]	INFO	|9:34:39 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking actual resolved inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Skip command start for /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t __bpipe_lazy_resource_threads__ -x splice -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa testdata.fastq/testdata.fastq.fusions.fa > testdata.fastq/testdata.fastq_genome.paf; 	   grep $'\t+\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",",$3","$3+100",",  $8","$9-$4+$3+100"," }' > testdata.fastq/testdata.fastq_genome.psl ; 	   grep $'\t-\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",", $2-$4","$2-$4+100",", $8","$9-$4+$3+100"," }' >> testdata.fastq/testdata.fastq_genome.psl ; due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Finished probe 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.paf against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.paf : 1737019515643 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.psl ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.psl against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.psl : 1737019586829 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.paf against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.paf : 1737019515643 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.psl ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.psl against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.psl : 1737019586829 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Setting or creating a delegate for context 706370198 body 236463667/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Existing delegate bpipe.PipelineDelegate@1e541f85 has type bpipe.PipelineDelegate in thread 45. Setting new context 706370198 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Producing from inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Computing threads based on parallel branch count of 1 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using only 32 instead of configured 192 because the configured value exceeds the number of available cores 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 0 base result = testdata.fastq/testdata.fastq_genome.paf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 0 base result = testdata.fastq/testdata.fastq_genome.paf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 1 base result = testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 0 base result = testdata.fastq/testdata.fastq_genome.paf 
+bpipe.PipelineDelegate	[45]	INFO	|9:34:39 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Using previously set output: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Query for output 1 base result = testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl]] for command 
+	   /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 -t __bpipe_lazy_resource_threads__ -x splice -c /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38.fa testdata.fastq/testdata.fastq.fusions.fa > testdata.fastq/testdata.fastq_genome.paf;
+	   grep $'\t+\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",",$3","$3+100",",  $8","$9-$4+$3+100"," }' > testdata.fastq/testdata.fastq_genome.psl ;
+	   grep $'\t-\t' testdata.fastq/testdata.fastq_genome.paf | awk -F'\t' -v OFS="\t" '{ print $4-$3,0,0,0,0,0,0,0,$5,$1,$2,$3,$4,$6,$7,$8,$9,2, 100","$4-$3-100",", $2-$4","$2-$4+100",", $8","$9-$4+$3+100"," }' >> testdata.fastq/testdata.fastq_genome.psl ;
+         
+bpipe.Command	[45]	INFO	|9:34:39 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/minimap2 
+bpipe.Command	[45]	INFO	|9:34:39 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:34:39 Checking actual resolved inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.paf against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.paf : 1737019515643 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.psl ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.psl against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.psl : 1737019586829 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.paf ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.paf against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.paf : 1737019515643 
+bpipe.Utils	[45]	INFO	|9:34:39 ===== Check testdata.fastq/testdata.fastq_genome.psl ===== 
+bpipe.Utils	[45]	INFO	|9:34:39 Checking testdata.fastq/testdata.fastq_genome.psl against inputs [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.Utils	[45]	INFO	|9:34:39 Check testdata.fastq/testdata.fastq.fusions.fa : 1737034479152 >  testdata.fastq/testdata.fastq_genome.psl : 1737019586829 
+bpipe.Dependencies	[45]	INFO	|9:34:39 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.CommandManager	[45]	INFO	|9:34:39 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:34:39 Created bpipe command id 31 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 requesting for -1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:34:39 There are 1 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[45]	INFO	|9:34:39 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Dividing up 31 free resource permits among 1 requestors = 31 
+bpipe.Concurrency	[45]	INFO	|9:34:39 31 is too much for requestor 0: allocating 15  
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 allocated 16 threads resources after 1 ms 
+bpipe.Concurrency	[45]	INFO	|9:34:39 Thread Thread-8 acquired resource threads in amount 16 
+bpipe.Command	[58]	INFO	|9:34:39 Command 31 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:34:39 Path testdata.fastq_genome.paf was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:34:39 Waiting for command to complete before releasing 1 resources 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:39 Path commandlog.txt was updated / created 
+bpipe.Concurrency	[1]	INFO	|9:34:41 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:34:46 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:34:51 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:51 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path LongGF.run.on.XXX.date.log was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path longgf_results.txt was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:34:52 Path longgf_results.txt was updated / created 
+bpipe.Concurrency	[1]	INFO	|9:34:56 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:02 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:07 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:12 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:17 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:23 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:28 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:33 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:38 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:44 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.Concurrency	[1]	INFO	|9:35:49 Waiting for 1 parallel stages to complete (pool.active=1 pool.tasks=1) 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:35:52 Path testdata.fastq_genome.psl was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:52 Releasing 1 resources 
+bpipe.Concurrency	[45]	INFO	|9:35:52 Thread Thread-8 releasing 16 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:52 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Adding outputs [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Stage minimap2_genome (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Setting next inputs [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] on stage 291025774, context 706370198 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Files modified since 1737034479383 in minimap2_genome are [testdata.fastq_genome.paf:1737034479436, testdata.fastq_genome.psl:1737034552873] 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Not overwriting meta data for testdata.fastq/testdata.fastq_genome.paf because it was not created or modified by stage minimap2_genome 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Not overwriting meta data for testdata.fastq/testdata.fastq_genome.psl because it was not created or modified by stage minimap2_genome 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Checking files: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Checking output (s) [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl]) 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 No explicit output on stage 105572923 context 618721900 so output is nextInputs [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Setting output [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] on context 618721900 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Setting next inputs [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] on stage 105572923, context 618721900 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, commandlog.txt:1737034479504, LongGF.run.on.XXX.date.log:1737034492912] 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Checking files: [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Checking output (s) [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineCategory	[45]	INFO	|9:35:52 Checking that outputs [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] exist 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Checking input (s) [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineCategory	[45]	INFO	|9:35:52 Next inputs from stage = [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineCategory	[45]	INFO	|9:35:52 Checking inputs for next stage:  [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Checking input (s) [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.psl 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Checking input (s) [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.paf 
+bpipe.Dependencies	[45]	INFO	|9:35:52  Checking file testdata.fastq/testdata.fastq_genome.psl 
+bpipe.PipelineStage	[45]	INFO	|9:35:52 Stage make_fasta_reads_table (testdata) : INPUT=[testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] OUTPUT=testdata.fastq_genome.paf.make_fasta_reads_table 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:52 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:52 Setting or creating a delegate for context 2080641524 body 727197178/JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:52 Created new delegate bpipe.PipelineDelegate@2b8feab9 overriding type JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 No inputs resolved by input wrappers: outputs based on default testdata.fastq_genome.paf.make_fasta_reads_table 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq_genome.paf.make_fasta_reads_table) 
+bpipe.PipelineInput	[45]	INFO	|9:35:52 Searching for missing Property: txt 
+bpipe.PipelineInput	[45]	INFO	|9:35:52 Resolving inputs matching pattern ^.*\.txt$ 
+bpipe.PipelineInput	[45]	INFO	|9:35:52 Found files with exts [txt$] : [[testdata.fastq/testdata.fastq.txt]] 
+bpipe.PipelineInput	[45]	INFO	|9:35:52 Adding resolved input testdata.fastq/testdata.fastq.txt (raw input = testdata.fastq/testdata.fastq.txt) 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Producing [testdata.fastq/testdata.fastq.reads] from bpipe.PipelineContext@7c0411f4 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:52 Setting or creating a delegate for context 2080641524 body 720965387/JAFFA_stages_bpipe$_run_closure14 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:52 Created new delegate bpipe.PipelineDelegate@22ff5005 overriding type JAFFA_stages_bpipe$_run_closure14 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Probing command using inputs [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 From clause searching for inputs matching spec [txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Input list to check:  [[testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq_genome.paf ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq_genome.psl ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq_genome.paf ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq_genome.psl ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.fusions.fa ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.txt ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Matched : [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Checking [testdata.fastq/testdata.fastq.txt] vs txt Y 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Found inputs [testdata.fastq/testdata.fastq.txt] for spec [txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Using previously set output: [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Using previously set output: [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.reads]] for command 
+                echo  -e "transcript	break_min	break_max	fusion_genes	spanning_pairs	spanning_reads" > testdata.fastq/testdata.fastq.reads ; 
+                awk '{ print $1"	"$2"	"$3"	"$4"	"0"	"1}' testdata.fastq/testdata.fastq_genome.paf | sort -u  >> testdata.fastq/testdata.fastq.reads
+             
+bpipe.Command	[45]	INFO	|9:35:52 Checking for configuration for command make_fasta_reads_table 
+bpipe.Command	[45]	INFO	|9:35:52 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Checking actual resolved inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq_genome.paf] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Skip command start for echo  -e "transcript	break_min	break_max	fusion_genes	spanning_pairs	spanning_reads" > testdata.fastq/testdata.fastq.reads ;                  awk '{ print $1"	"$2"	"$3"	"$4"	"0"	"1}' testdata.fastq/testdata.fastq_genome.paf | sort -u  >> testdata.fastq/testdata.fastq.reads due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Finished probe 
+bpipe.Utils	[45]	INFO	|9:35:52 ===== Check testdata.fastq/testdata.fastq.reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:52 Checking testdata.fastq/testdata.fastq.reads against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Utils	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.reads : 1737019586929 
+bpipe.Utils	[45]	INFO	|9:35:52 ===== Check testdata.fastq/testdata.fastq.reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:52 Checking testdata.fastq/testdata.fastq.reads against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.Utils	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.reads : 1737019586929 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.reads, testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:52 Setting or creating a delegate for context 2080641524 body 720965387/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:52 Existing delegate bpipe.PipelineDelegate@22ff5005 has type bpipe.PipelineDelegate in thread 45. Setting new context 2080641524 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Producing from inputs [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 From clause searching for inputs matching spec [txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Input list to check:  [[testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.txt ends with txt 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Matched : [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Checking [testdata.fastq/testdata.fastq.txt] vs txt Y 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Found inputs [testdata.fastq/testdata.fastq.txt] for spec [txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Using previously set output: [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Using previously set output: [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.reads]] for command 
+                echo  -e "transcript	break_min	break_max	fusion_genes	spanning_pairs	spanning_reads" > testdata.fastq/testdata.fastq.reads ; 
+                awk '{ print $1"	"$2"	"$3"	"$4"	"0"	"1}' testdata.fastq/testdata.fastq.txt | sort -u  >> testdata.fastq/testdata.fastq.reads
+             
+bpipe.Command	[45]	INFO	|9:35:52 Checking for configuration for command make_fasta_reads_table 
+bpipe.Command	[45]	INFO	|9:35:52 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:35:52 Checking actual resolved inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:52 ===== Check testdata.fastq/testdata.fastq.reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:52 Checking testdata.fastq/testdata.fastq.reads against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.reads : 1737019586929 
+bpipe.Utils	[45]	INFO	|9:35:52 ===== Check testdata.fastq/testdata.fastq.reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:52 Checking testdata.fastq/testdata.fastq.reads against inputs [testdata.fastq/testdata.fastq.txt, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:52 Check testdata.fastq/testdata.fastq.txt : 1737034478612 >  testdata.fastq/testdata.fastq.reads : 1737019586929 
+bpipe.Dependencies	[45]	INFO	|9:35:52 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.reads, testdata.fastq/testdata.fastq.reads] 
+bpipe.CommandManager	[45]	INFO	|9:35:52 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:35:52 Created bpipe command id 33 
+bpipe.Concurrency	[45]	INFO	|9:35:52 Thread Thread-8 requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:35:52 There are 1 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[45]	INFO	|9:35:52 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[45]	INFO	|9:35:52 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:35:52 Thread Thread-8 allocated 1 threads resources after 0 ms 
+bpipe.Concurrency	[45]	INFO	|9:35:52 Thread Thread-8 acquired resource threads in amount 1 
+bpipe.Command	[61]	INFO	|9:35:52 Command 33 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:35:52 Path testdata.fastq.reads was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Waiting for command to complete before releasing 1 resources 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Releasing 1 resources 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Adding outputs [testdata.fastq/testdata.fastq.reads] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Stage make_fasta_reads_table (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.reads] on stage 274122118, context 2080641524 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 1737034552906 in make_fasta_reads_table are [testdata.fastq.reads:1737034552961] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not overwriting meta data for testdata.fastq/testdata.fastq.reads because it was not created or modified by stage make_fasta_reads_table 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.reads 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq.reads]) 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 No explicit output on stage 921687000 context 1045006206 so output is nextInputs [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.reads] on context 1045006206 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.reads] on stage 921687000, context 1045006206 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034492912, commandlog.txt:1737034553033] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.reads 
+bpipe.PipelineCategory	[45]	INFO	|9:35:53 Checking that outputs [testdata.fastq/testdata.fastq.reads] exist 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking input (s) [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.reads 
+bpipe.PipelineCategory	[45]	INFO	|9:35:53 Next inputs from stage = [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineCategory	[45]	INFO	|9:35:53 Checking inputs for next stage:  [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking input (s) [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.reads 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking input (s) [testdata.fastq/testdata.fastq.reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.reads 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Stage get_final_list (testdata) : INPUT=[testdata.fastq/testdata.fastq.reads] OUTPUT=testdata.fastq.reads.get_final_list 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Setting or creating a delegate for context 518606260 body 373097727/JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Created new delegate bpipe.PipelineDelegate@56d02ca2 overriding type JAFFA_stages_bpipe in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 No inputs resolved by input wrappers: outputs based on default testdata.fastq.reads.get_final_list 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.reads.get_final_list) 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Producing [testdata.fastq.summary] from bpipe.PipelineContext@1ee94db4 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Setting or creating a delegate for context 518606260 body 1559731539/JAFFA_stages_bpipe$_run_closure17 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Created new delegate bpipe.PipelineDelegate@becf116 overriding type JAFFA_stages_bpipe$_run_closure17 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Probing command using inputs [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 From clause searching for inputs matching spec [.psl, .reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Input list to check:  [[testdata.fastq/testdata.fastq.reads], [testdata.fastq/testdata.fastq.reads], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq.reads], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.reads ends with .psl 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.reads ends with .psl 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Matched : [] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.paf ends with .psl 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl ends with .psl 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Matched : [testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] vs .psl Y 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.reads ends with .reads 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Matched : [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking [testdata.fastq/testdata.fastq.reads] vs .reads Y 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Found inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] for spec [.psl, .reads] 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Input 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.summary]] for command 
+	        if [ ! -s testdata.fastq/testdata.fastq_genome.psl ] ; then
+		   touch testdata.fastq/testdata.fastq.summary ;
+ 		else 
+                   /usr/bin/R --vanilla --args testdata.fastq/testdata.fastq_genome.psl testdata.fastq/testdata.fastq.reads /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt 
+		   10000 NoSupport,PotentialReadThrough 50 testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/make_final_table.R ;
+		 fi;
+             
+bpipe.Command	[45]	INFO	|9:35:53 Checking for configuration for command get_final_list 
+bpipe.Command	[45]	INFO	|9:35:53 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking actual resolved inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads, testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Skip command start for if [ ! -s testdata.fastq/testdata.fastq_genome.psl ] ; then touch testdata.fastq/testdata.fastq.summary ; else  /usr/bin/R --vanilla --args testdata.fastq/testdata.fastq_genome.psl testdata.fastq/testdata.fastq.reads /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt  10000 NoSupport,PotentialReadThrough 50 testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/make_final_table.R ; fi; due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Finished probe 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.summary against inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl : 1737034552873 >  testdata.fastq/testdata.fastq.summary : 1737019587061 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.summary against inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl : 1737034552873 >  testdata.fastq/testdata.fastq.summary : 1737019587061 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Setting or creating a delegate for context 518606260 body 1559731539/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Existing delegate bpipe.PipelineDelegate@becf116 has type bpipe.PipelineDelegate in thread 45. Setting new context 518606260 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Producing from inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 From clause searching for inputs matching spec [.psl, .reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Input list to check:  [[testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads], [testdata.fastq/testdata.fastq.reads], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.paf], [testdata.fastq/testdata.fastq.txt], [testdata.fastq/testdata.fastq.fusions.fa], [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl], [testdata.fastq/testdata.fastq.reads], [], [], [testdata.fastq/testdata.fastq.fasta], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz], [], [], [checks], [], [], [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz]] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl ends with .psl 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.reads ends with .psl 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Matched : [testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] vs .psl Y 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl ends with .reads 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.reads ends with .reads 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Matched : [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] vs .reads Y 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Found inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] for spec [.psl, .reads] 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Input 1 reference resolved by PipelineDelegate 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Input 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.summary]] for command 
+	        if [ ! -s testdata.fastq/testdata.fastq_genome.psl ] ; then
+		   touch testdata.fastq/testdata.fastq.summary ;
+ 		else 
+                   /usr/bin/R --vanilla --args testdata.fastq/testdata.fastq_genome.psl testdata.fastq/testdata.fastq.reads /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/hg38_genCode22.tab /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/known_fusions.txt 
+		   10000 NoSupport,PotentialReadThrough 50 testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/make_final_table.R ;
+		 fi;
+             
+bpipe.Command	[45]	INFO	|9:35:53 Checking for configuration for command get_final_list 
+bpipe.Command	[45]	INFO	|9:35:53 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking actual resolved inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads, testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.summary against inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads, testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl : 1737034552873 >  testdata.fastq/testdata.fastq.summary : 1737019587061 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.summary against inputs [testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads, testdata.fastq/testdata.fastq_genome.psl, testdata.fastq/testdata.fastq.reads] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq_genome.psl : 1737034552873 >  testdata.fastq/testdata.fastq.summary : 1737019587061 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.summary] 
+bpipe.CommandManager	[45]	INFO	|9:35:53 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:35:53 Created bpipe command id 35 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:35:53 There are 1 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[45]	INFO	|9:35:53 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 allocated 1 threads resources after 1 ms 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 acquired resource threads in amount 1 
+bpipe.Command	[64]	INFO	|9:35:53 Command 35 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:35:53 Path testdata.fastq.summary was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Releasing 1 resources 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Adding outputs [testdata.fastq/testdata.fastq.summary] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Stage get_final_list (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.summary] on stage 2051059472, context 518606260 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 1737034553042 in get_final_list are [testdata.fastq.summary:1737034553093] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not overwriting meta data for testdata.fastq/testdata.fastq.summary because it was not created or modified by stage get_final_list 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.summary 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq.summary]) 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 No explicit output on stage 890161192 context 1192902018 so output is nextInputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.summary] on context 1192902018 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.summary] on stage 890161192, context 1192902018 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034492912, commandlog.txt:1737034553161] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.summary 
+bpipe.PipelineCategory	[45]	INFO	|9:35:53 Checking that outputs [testdata.fastq/testdata.fastq.summary] exist 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking input (s) [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.summary 
+bpipe.PipelineCategory	[45]	INFO	|9:35:53 Next inputs from stage = [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineCategory	[45]	INFO	|9:35:53 Checking inputs for next stage:  [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking input (s) [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.summary 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking input (s) [testdata.fastq/testdata.fastq.summary] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.summary 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Stage report_3_gene_fusions (testdata) : INPUT=[testdata.fastq/testdata.fastq.summary] OUTPUT=testdata.fastq.summary.report_3_gene_fusions 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Setting or creating a delegate for context 153794597 body 1105416433/script17370344699461653772785 in thread 45 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Created new delegate bpipe.PipelineDelegate@22725302 overriding type script17370344699461653772785 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 No inputs resolved by input wrappers: outputs based on default testdata.fastq.summary.report_3_gene_fusions 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Output set to testdata.fastq (new default output = testdata.fastq/testdata.fastq.summary.report_3_gene_fusions) 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Producing [testdata.fastq.3gene_summary, testdata.fastq.3gene_reads] from bpipe.PipelineContext@92ab825 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Setting or creating a delegate for context 153794597 body 1108276247/script17370344699461653772785$_run_closure4 in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Created new delegate bpipe.PipelineDelegate@51525f6 overriding type script17370344699461653772785$_run_closure4 in thread 45 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Probing command using inputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Searching for missing Property: summary 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Resolving inputs matching pattern ^.*\.summary$ 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Found files with exts [summary$] : [[testdata.fastq/testdata.fastq.summary]] 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Adding resolved input testdata.fastq/testdata.fastq.summary (raw input = testdata.fastq/testdata.fastq.summary) 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Searching for missing Property: txt 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Resolving inputs matching pattern ^.*\.txt$ 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Found files with exts [txt$] : [[testdata.fastq/testdata.fastq.txt]] 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Adding resolved input testdata.fastq/testdata.fastq.txt (raw input = testdata.fastq/testdata.fastq.txt) 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Query for output 1 base result = testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Query for output 0 base result = testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.3gene_reads, testdata.fastq/testdata.fastq.3gene_summary]] for command 
+         /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table testdata.fastq/testdata.fastq.summary testdata.fastq/testdata.fastq.txt testdata.fastq/testdata.fastq.3gene_reads > testdata.fastq/testdata.fastq.3gene_summary
+       
+bpipe.Command	[45]	INFO	|9:35:53 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table 
+bpipe.Command	[45]	INFO	|9:35:53 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking actual resolved inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Skip command start for /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table testdata.fastq/testdata.fastq.summary testdata.fastq/testdata.fastq.txt testdata.fastq/testdata.fastq.3gene_reads > testdata.fastq/testdata.fastq.3gene_summary due to probe mode 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Finished probe 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_summary against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_summary : 1737019587201 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_reads against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_reads : 1737019587201 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_reads against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_reads : 1737019587201 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_summary against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_summary : 1737019587201 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads, testdata.fastq/testdata.fastq.3gene_reads, testdata.fastq/testdata.fastq.3gene_summary] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Setting or creating a delegate for context 153794597 body 1108276247/bpipe.PipelineDelegate in thread 45 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Existing delegate bpipe.PipelineDelegate@51525f6 has type bpipe.PipelineDelegate in thread 45. Setting new context 153794597 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Producing from inputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Searching for missing Property: summary 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Resolving inputs matching pattern ^.*\.summary$ 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Found files with exts [summary$] : [[testdata.fastq/testdata.fastq.summary]] 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Adding resolved input testdata.fastq/testdata.fastq.summary (raw input = testdata.fastq/testdata.fastq.summary) 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Searching for missing Property: txt 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Resolving inputs matching pattern ^.*\.txt$ 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Found files with exts [txt$] : [[testdata.fastq/testdata.fastq.txt]] 
+bpipe.PipelineInput	[45]	INFO	|9:35:53 Adding resolved input testdata.fastq/testdata.fastq.txt (raw input = testdata.fastq/testdata.fastq.txt) 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Query for output 1 base result = testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineDelegate	[45]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Using previously set output: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Query for output 0 base result = testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Tracking outputs referenced=[[]] inferred=[[testdata.fastq/testdata.fastq.3gene_reads, testdata.fastq/testdata.fastq.3gene_summary]] for command 
+         /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table testdata.fastq/testdata.fastq.summary testdata.fastq/testdata.fastq.txt testdata.fastq/testdata.fastq.3gene_reads > testdata.fastq/testdata.fastq.3gene_summary
+       
+bpipe.Command	[45]	INFO	|9:35:53 Checking for configuration for command /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/tools/bin/make_3_gene_fusion_table 
+bpipe.Command	[45]	INFO	|9:35:53 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Checking actual resolved inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_reads against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_reads : 1737019587201 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_summary against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_summary : 1737019587201 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_summary ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_summary against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_summary : 1737019587201 
+bpipe.Utils	[45]	INFO	|9:35:53 ===== Check testdata.fastq/testdata.fastq.3gene_reads ===== 
+bpipe.Utils	[45]	INFO	|9:35:53 Checking testdata.fastq/testdata.fastq.3gene_reads against inputs [testdata.fastq/testdata.fastq.summary, testdata.fastq/testdata.fastq.txt] 
+bpipe.Utils	[45]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  testdata.fastq/testdata.fastq.3gene_reads : 1737019587201 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not up to date because these files exist and are older than inputs: [testdata.fastq/testdata.fastq.3gene_reads, testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.CommandManager	[45]	INFO	|9:35:53 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[45]	INFO	|9:35:53 Created bpipe command id 37 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[45]	INFO	|9:35:53 There are 1 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[45]	INFO	|9:35:53 First pass allocations are [1] 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 allocated 1 threads resources after 0 ms 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 acquired resource threads in amount 1 
+bpipe.Command	[67]	INFO	|9:35:53 Command 37 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:35:53 Path testdata.fastq.3gene_summary was updated / created 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:35:53 Path testdata.fastq.3gene_reads was updated / created 
+bpipe.OutputDirectoryWatcher	[46]	INFO	|9:35:53 Path testdata.fastq.3gene_summary was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Releasing 1 resources 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Thread Thread-8 releasing 1 threads 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[45]	INFO	|9:35:53 Released 1 resources 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Adding outputs [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] as a result of produce 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Stage report_3_gene_fusions (testdata) returned null as default inputs for next stage 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inferring nextInputs from explicit output as [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] on stage 718624504, context 153794597 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 1737034553170 in report_3_gene_fusions are [testdata.fastq.3gene_reads:1737034553225, testdata.fastq.3gene_summary:1737034553225] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not overwriting meta data for testdata.fastq/testdata.fastq.3gene_reads because it was not created or modified by stage report_3_gene_fusions 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Not overwriting meta data for testdata.fastq/testdata.fastq.3gene_summary because it was not created or modified by stage report_3_gene_fusions 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads]) 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 No explicit output on stage 1344807017 context 1546333892 so output is nextInputs [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] on context 1546333892 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] on stage 1344807017, context 1546333892 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034492912, commandlog.txt:1737034553289] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Inputs are NOT being inferred from context.output (context.nextInputs=[testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads]) 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 No explicit output on stage 689463893 context 1682642943 so output is nextInputs [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[45]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] on context 1682642943 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Setting next inputs [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] on stage 689463893, context 1682642943 in thread 45 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034492912, commandlog.txt:1737034553289] 
+bpipe.PipelineStage	[45]	INFO	|9:35:53 Checking files: [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53 Checking output (s) [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[45]	INFO	|9:35:53  Checking file testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.Pipeline	[45]	INFO	|9:35:53 Pipeline segment testdata.fastq in thread 45 has finished normally 
+bpipe.Pipeline	[45]	INFO	|9:35:53 Finished running segment for inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz] 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Unregister resource requestor bpipe.Pipeline@60afd40d 
+bpipe.Concurrency	[45]	INFO	|9:35:53 Decremented running count to 0 in thread Thread-8 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Parent pipeline of concurent sections [1622135821] is 500885941 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Maximum child stage list length = 8 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 ###### Merging results of parallel split in parent branch  ##### 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 0 [get_fasta] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.fasta] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.fasta] on context 1780399359 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 1 [minimap2_transcriptome] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.paf] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.paf] on context 428245792 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 2 [filter_transcripts] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.txt] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.txt] on context 331748029 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 3 [extract_fusion_sequences] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.fusions.fa] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.fusions.fa] on context 1056185446 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 4 [minimap2_genome] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq_genome.paf, testdata.fastq/testdata.fastq_genome.psl] on context 1802736936 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 5 [make_fasta_reads_table] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.reads] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.reads] on context 1647243882 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 6 [get_final_list] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.summary] on context 1105090408 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Grouping stages at index 7 [report_3_gene_fusions] for merging 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged outputs are [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [testdata.fastq/testdata.fastq.3gene_summary, testdata.fastq/testdata.fastq.3gene_reads] on context 1599566873 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 There are 8 stages from nested pipelines 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 There [bpipe.PipelineStage@2ad556f8] parallel paths in final stage 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Last merged outputs are [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] on context 1809129176 in thread 1 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Merged stage name is report_3_gene_fusions_bpipe_merge 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Inputs are NOT being inferred from context.output (context.nextInputs=[/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads]) 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 No explicit output on stage 1107404311 context 137123763 so output is nextInputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] on context 137123763 in thread 1 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Setting next inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] on stage 1107404311, context 137123763 in thread 1 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034492912, commandlog.txt:1737034553289] 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Checking files: [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Checking output (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Inputs are NOT being inferred from context.output (context.nextInputs=[/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads]) 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 No explicit output on stage 1182758821 context 1535116392 so output is nextInputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Setting output [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] on context 1535116392 in thread 1 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Setting next inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] on stage 1182758821, context 1535116392 in thread 1 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Files modified since 0 in Unknown are [checks:1737018747217, longgf_results.txt:1737034492952, jaffa_results.csv:1737034316576, data.fastq:1737034322476, winnowmap.sam:1737034434895, winnowmap.bam:1737034436335, winnowmap.sorted.bam:1737034437535, winnowmap.sorted.bam.bai:1737034437831, data.sam:1737034466683, data.bam:1737034468467, data.bam.bai:1737034468815, sorted.bam:1737034470139, LongGF.run.on.XXX.date.log:1737034492912, commandlog.txt:1737034553289] 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Checking files: [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Checking output (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Checking that outputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] exist 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Checking input (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Next inputs from stage = [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineCategory	[1]	INFO	|9:35:53 Checking inputs for next stage:  [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Checking input (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Checking input (s) [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary 
+bpipe.Dependencies	[1]	INFO	|9:35:53  Checking file /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Stage compile_all_results : INPUT=[/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] OUTPUT=testdata.fastq.3gene_summary.compile_all_results 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Setting or creating a delegate for context 465152579 body 2082509879/JAFFA_stages_bpipe in thread 1 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Created new delegate bpipe.PipelineDelegate@420bc288 overriding type JAFFA_stages_bpipe in thread 1 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using default value of variable type =  
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Producing [jaffa_results.fasta, jaffa_results.csv] from bpipe.PipelineContext@1bb9aa43 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Setting or creating a delegate for context 465152579 body 1005093407/JAFFA_stages_bpipe$_run_closure18 in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Created new delegate bpipe.PipelineDelegate@3b65e559 overriding type JAFFA_stages_bpipe$_run_closure18 in thread 1 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Probing command using inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 1 base result = jaffa_results.csv 
+bpipe.PipelineInput	[1]	INFO	|9:35:53 Searching for missing Property: summary 
+bpipe.PipelineInput	[1]	INFO	|9:35:53 Resolving inputs matching pattern ^.*\.summary$ 
+bpipe.PipelineInput	[1]	INFO	|9:35:53 Found files with exts [summary$] : [[testdata.fastq/testdata.fastq.summary]] 
+bpipe.MultiPipelineInput	[1]	INFO	|9:35:53 My resolved inputs: 1738623078 child resolved inputs 1738623078 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 0 base result = jaffa_results.fasta 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 0 base result = jaffa_results.fasta 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 1 base result = jaffa_results.csv 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 0 base result = jaffa_results.fasta 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Tracking outputs referenced=[[]] inferred=[[jaffa_results.csv, jaffa_results.fasta]] for command 
+            /usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ;
+            rm -f jaffa_results.fasta;
+            while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;
+
+            echo "Done writing jaffa_results.fasta";
+            echo "All Done." ;
+	    echo "*************************************************************************" ;
+	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ;
+	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. ";
+	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ;
+	    echo "   Genome Med 7, 43 (2015)" ;
+	    echo "*************************************************************************" ;
+	    echo " Citation for JAFFAL: " ;
+	    echo "   Davidson, N.M. et al. ";
+	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ;
+	    echo "   Genome Biol. 23, 10 (2022)" ;
+	    echo "*************************************************************************" ;
+         
+bpipe.Command	[1]	INFO	|9:35:53 Checking for configuration for command compile_all_results 
+bpipe.Command	[1]	INFO	|9:35:53 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Checking actual resolved inputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Skip check dependencies due to probe mode 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Skip command start for /usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ; due to probe mode 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Finished probe 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.fasta ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 file doesn't exist: jaffa_results.fasta 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.csv ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 Checking jaffa_results.csv against inputs [testdata.fastq/testdata.fastq.summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Utils	[1]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  jaffa_results.csv : 1737034316576 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.csv ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 Checking jaffa_results.csv against inputs [testdata.fastq/testdata.fastq.summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.Utils	[1]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  jaffa_results.csv : 1737034316576 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.fasta ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 file doesn't exist: jaffa_results.fasta 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Not up to date because these files exist and are older than inputs: [jaffa_results.csv, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Not up to date because input inferred by probe of body newer than outputs 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Setting or creating a delegate for context 465152579 body 1005093407/bpipe.PipelineDelegate in thread 1 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Existing delegate bpipe.PipelineDelegate@3b65e559 has type bpipe.PipelineDelegate in thread 1. Setting new context 465152579 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Producing from inputs [/home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_summary, /home/renzt/rzt/fusion_gene/GFvoter-main/GFvoter_out_test/process_output_file/testdata.fastq/testdata.fastq.3gene_reads] 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 1 base result = jaffa_results.csv 
+bpipe.PipelineInput	[1]	INFO	|9:35:53 Searching for missing Property: summary 
+bpipe.PipelineInput	[1]	INFO	|9:35:53 Resolving inputs matching pattern ^.*\.summary$ 
+bpipe.PipelineInput	[1]	INFO	|9:35:53 Found files with exts [summary$] : [[testdata.fastq/testdata.fastq.summary]] 
+bpipe.MultiPipelineInput	[1]	INFO	|9:35:53 My resolved inputs: 1738623078 child resolved inputs 1738623078 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 0 base result = jaffa_results.fasta 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 0 base result = jaffa_results.fasta 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 2 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 1 base result = jaffa_results.csv 
+bpipe.PipelineDelegate	[1]	INFO	|9:35:53 Output 1 reference resolved by PipelineDelegate 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Using previously set output: [jaffa_results.fasta, jaffa_results.csv] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Query for output 0 base result = jaffa_results.fasta 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Tracking outputs referenced=[[]] inferred=[[jaffa_results.csv, jaffa_results.fasta]] for command 
+            /usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ;
+            rm -f jaffa_results.fasta;
+            while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;
+
+            echo "Done writing jaffa_results.fasta";
+            echo "All Done." ;
+	    echo "*************************************************************************" ;
+	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ;
+	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. ";
+	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ;
+	    echo "   Genome Med 7, 43 (2015)" ;
+	    echo "*************************************************************************" ;
+	    echo " Citation for JAFFAL: " ;
+	    echo "   Davidson, N.M. et al. ";
+	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ;
+	    echo "   Genome Biol. 23, 10 (2022)" ;
+	    echo "*************************************************************************" ;
+         
+bpipe.Command	[1]	INFO	|9:35:53 Checking for configuration for command compile_all_results 
+bpipe.Command	[1]	INFO	|9:35:53 Default command properties: [max_per_command_threads:16, executor:local] 
+bpipe.PipelineContext	[1]	INFO	|9:35:53 Checking actual resolved inputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.csv ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 Checking jaffa_results.csv against inputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.Utils	[1]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  jaffa_results.csv : 1737034316576 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.fasta ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 file doesn't exist: jaffa_results.fasta 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.fasta ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 file doesn't exist: jaffa_results.fasta 
+bpipe.Utils	[1]	INFO	|9:35:53 ===== Check jaffa_results.csv ===== 
+bpipe.Utils	[1]	INFO	|9:35:53 Checking jaffa_results.csv against inputs [testdata.fastq/testdata.fastq.summary] 
+bpipe.Utils	[1]	INFO	|9:35:53 Check testdata.fastq/testdata.fastq.summary : 1737034553093 >  jaffa_results.csv : 1737034316576 
+bpipe.Dependencies	[1]	INFO	|9:35:53 Not up to date because these files exist and are older than inputs: [jaffa_results.csv, jaffa_results.csv] 
+bpipe.CommandManager	[1]	INFO	|9:35:53 Using config [max_per_command_threads:16, executor:local] for command 
+bpipe.CommandManager	[1]	INFO	|9:35:53 Created bpipe command id 39 
+bpipe.Concurrency	[1]	INFO	|9:35:53 Thread main requesting for 1 concurrency permit(s) type threads with 32 available 
+bpipe.Concurrency	[1]	INFO	|9:35:53 There are 0 registered bidders with 0 currently bidding, will distribute resources at 0 
+bpipe.Concurrency	[1]	INFO	|9:35:53 Taking over resource allocation because requested/bidders = 1 / 0 
+bpipe.Concurrency	[1]	INFO	|9:35:53 First pass allocations are [1] 
+bpipe.Concurrency	[1]	INFO	|9:35:53 Thread main allocated 1 threads resources after 0 ms 
+bpipe.Concurrency	[1]	INFO	|9:35:53 Thread main acquired resource threads in amount 1 
+bpipe.Command	[70]	INFO	|9:35:53 Command 39 changing state from null to RUNNING 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[1]	INFO	|9:35:53 Waiting for command to complete before releasing 1 resources 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[1]	INFO	|9:35:53 Releasing 1 resources 
+bpipe.Concurrency	[1]	INFO	|9:35:53 Thread main releasing 1 threads 
+bpipe.executor.ThrottledDelegatingCommandExecutor	[1]	INFO	|9:35:53 Released 1 resources 
+bpipe.PipelineStage	[1]	SEVERE	|9:35:53 Cleaning up outputs due to error 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 File .bpipe.tmp-860632857 was created in directory . 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path .bpipe.tmp-860632857 was updated / created 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Keeping jaffa_results.fasta because determined as pre-existing 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Keeping jaffa_results.csv because determined as pre-existing 
+bpipe.PipelineStage	[1]	INFO	|9:35:53 Cleaning up: [] 
+bpipe.PipelineStage	[1]	SEVERE	|9:35:53 Cleaning up outputs due to error 
+bpipe.Pipeline	[1]	INFO	|9:35:53 Pipeline segment failed (2): Command failed with exit status = 1 : 
+
+/usr/bin/R --vanilla --args jaffa_results testdata.fastq/testdata.fastq.summary < /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/compile_results.R ; rm -f jaffa_results.fasta; while read line; do /home/renzt/rzt/fusion_gene/GFvoter-main/JAFFA-version-2.3/scripts/get_fusion_seqs.bash $line jaffa_results.fasta ; done < jaffa_results.csv;              echo "Done writing jaffa_results.fasta";             echo "All Done." ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFA_direct, JAFFA_assembly and JAFFA_hybrid: " ; 	    echo "   Davidson, N.M., Majewski, I.J. & Oshlack, A. "; 	    echo "   JAFFA: High sensitivity transcriptome-focused fusion gene detection." ; 	    echo "   Genome Med 7, 43 (2015)" ; 	    echo "*************************************************************************" ; 	    echo " Citation for JAFFAL: " ; 	    echo "   Davidson, N.M. et al. "; 	    echo "   JAFFAL: detecting fusion genes with long-read transcriptome sequencing" ; 	    echo "   Genome Biol. 23, 10 (2022)" ; 	    echo "*************************************************************************" ; 
+bpipe.Pipeline	[1]	INFO	|9:35:53 Finished running segment for inputs /home/renzt/rzt/fusion_gene/GFvoter-main/testdata.fastq.gz 
+bpipe.Concurrency	[1]	INFO	|9:35:53 Unregister resource requestor bpipe.Pipeline@1ddae9b5 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.OutputDirectoryWatcher	[43]	INFO	|9:35:53 Path commandlog.txt was updated / created 
+bpipe.Runner	[30]	INFO	|9:35:53 Deleting job file /home/renzt/.bpipedb/jobs/98961 
