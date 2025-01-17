@@ -1,0 +1,15 @@
+name: GFenv
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.9
+  - minimap2
+  - winnowmap
+  - samtools
+  - longgf
+  - pip
+  - pip:
+      - numpy
