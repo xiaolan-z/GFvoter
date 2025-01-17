@@ -4,7 +4,7 @@ import os
 import sys
 from pathlib import Path
 current_dir = Path(__file__).resolve().parent
-module_dir = current_dir / 'module1_rzt'
+module_dir = current_dir / 'module'
 sys.path.append(str(module_dir))
 
 import longgf_jaffal
