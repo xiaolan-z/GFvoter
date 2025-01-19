@@ -210,6 +210,6 @@ if __name__ == "__main__":
     winnowmap_result="winnowmap.sorted.bam"
     
     run_commands_parallel([f"{GFvoter_path}/get_alignment_info {minimap_result} {align_file1}"], [f"{GFvoter_path}/get_alignment_info {winnowmap_result} {align_file2}"])
-    run_commands_parallel([f"{GFvoter_path}/read2gene {GFvoter_path}/doc/sum_gene_info_sort_nonrepeat.txt1 {align_file1} {fusion_records1}"], [f"{GFvoter_path}/read2gene {GFvoter_path}/doc/sum_gene_info_sort_nonrepeat.txt1 {align_file1} {fusion_records2}"])
+    run_commands_parallel([f"{GFvoter_path}/read2gene {GFvoter_path}/doc/sum_gene_info_sort_nonrepeat.txt1 {align_file1} {fusion_records1}"], [f"{GFvoter_path}/read2gene {GFvoter_path}/doc/sum_gene_info_sort_nonrepeat.txt1 {align_file2} {fusion_records2}"])
     merged_file(align_file1,align_file2,align_file)
     run_command(f"{GFvoter_path}/mergeAndsort fusion_records1 fusion_records2 candi_fusiongene_records.txt")
