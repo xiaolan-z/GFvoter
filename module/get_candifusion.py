@@ -84,32 +84,6 @@ def run_command(command):
         print(f"command '{command}' failed to execute. Errors:{result.stderr}")
     return result
 
-# def read_to_gene(info_list, time):
-#     elements = info_list.split()
-#     read_chromosome=elements[1]
-#     read_start_pos=int(elements[3])
-#     read_end_pos=int(elements[4])
-#     left_soft=int(elements[5])
-#     right_soft=int(elements[6])
-#     rl=int(elements[10])
-#     a=elements[8]
-#     b=elements[9]
-#     if a =='secondary':
-#         return None
-#     elif time > 1:
-#          with open(gene_list, 'r') as file:
-#               for gene_info in file:
-#                   elements = line.strip().split(', ')
-#                   genex, geney = '', ''
-#                   if gene_info[1]==read_chromosome:
-#                      if read_start_pos >= int(gene_info[2]) and read_end_pos <= int(gene[3]):
-#                         genex=gene[0]
-#                         geney=gene[4]
-#                         return [genex,read_chromosome, read_start_pos, read_end_pos, geney, left_soft,right_soft,rl,a,b]
-#                         break
-#     else:
-#         return None
-
 
 def fusion_record_read_file(align_file):
     with open(align_file, 'r') as file:
