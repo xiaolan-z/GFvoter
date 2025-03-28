@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import datetime
 import argparse
 import os
@@ -40,12 +41,14 @@ def initialization_parameters():
     parser.add_argument('-sp', action='store', dest='sup_read', type=int, required=False, default=2,
                         help='Indicates the minimum number of supporting reads of each candidate in Scoring process.')                                  
     parser.add_argument('-score', action='store', dest='min_score', type=int, required=False, default=400,
-                        help='Indicates the score threshold set during the scoring process.')          
+                        help='Indicates the score threshold set during the scoring process.')
+    parser.add_argument('-f', action='store', dest='fusion_scoring', type=str, required=False, default="F",
+                        help='output the scoring of each fusion method during the voting process (F or T)')      
     parser.add_argument('-poll', action='store', dest='min_poll', type=int, required=False, default=6,
                         help='Indicates the minimum number of votes for each reported fusion.')
     parser.add_argument('-ground_truth', action='store', dest='ground_truth', type=str, required=False, default="a",
                         help='Indicates a path to the custom known_fusions.')
-                                           
+                                         
     args = parser.parse_args()
     return args
 
@@ -62,29 +65,46 @@ def union(set1,set2):
 
     
 def voter(union_set):
-    voters_dict={}
-    voter_fusions=set()
+    voters_dict = {}
+    voter_fusions = {}
     for fusion in union_set:
-        voters=0
+        voters = 0
+        s1 = 0
+        s2 = 0
+        s3 = 0
+        s4 = 0
+        s5 = 0
         fusion1, fusion2 = fusion.split(':')
         fusion_reversed = fusion2 + ":" + fusion1
+        
         if fusion in minimap2_results or fusion_reversed in minimap2_results:
-           voters+=1
+            voters += 1
+            s1 = 1
         if fusion in winnowmap_results or fusion_reversed in winnowmap_results:
-           voters+=1
+            voters += 1
+            s2 = 1
         if fusion in LongGF_gene or fusion_reversed in LongGF_gene:
-           voters+=3
+            voters += 3
+            s3 = 3
         if fusion in JAFFAL_gene or fusion_reversed in JAFFAL_gene:
-           voters+=3
+            voters += 3
+            s4 = 3
         if fusion in Scoring_list or fusion_reversed in Scoring_list:
-           voters+=6
-        voters_dict.update({fusion:voters})
-        if voters>=min_poll:
-           voter_fusions.add(fusion)
+            voters += 6
+            s5 = 6
+        
+        voters_dict.update({fusion: voters})
+        
+        if voters >= min_poll:
+                voter_fusions[fusion] = f"{voters}({s1}, {s2}, {s3}, {s4}, {s5})"
+
+    
     sorted_dict = dict(sorted(voters_dict.items(), key=lambda x: x[1], reverse=True))
-    with open("./voter_list",'w') as f:
-         for key, value in sorted_dict.items():
-             f.write(f"{key}\t{value}\n")
+
+    with open("./voter_list", 'w') as f:
+        for key, value in sorted_dict.items():
+            f.write(f"{key}\t{value}\n")
+    
     return voter_fusions
 
 
@@ -137,7 +157,7 @@ def scorforfusion():
 def main():
     voter_fusions=voter(union_set)
     GFvoter_results=[]
-    for fusion in voter_fusions:
+    for fusion, voters in voter_fusions.items():
         fusion1, fusion2 = fusion.split(':')
         fusion_reversed = fusion2 + ":" + fusion1
         read_num=0
@@ -196,7 +216,7 @@ def main():
                 continue
         breakpoint1=sum(breakpoint_sum1)/len(breakpoint_sum1)
         breakpoint2=sum(breakpoint_sum2)/len(breakpoint_sum2)
-        fusion_info=[fusion,read_num,chrom1,breakpoint1,chrom2,breakpoint2]
+        fusion_info=[fusion,read_num,chrom1,breakpoint1,chrom2,breakpoint2,voters]
         GFvoter_results.append(fusion_info)  
 
     known_fusions=[]
@@ -229,7 +249,10 @@ def main():
         sorted_fusions = [item for item in sorted_fusions if float(item[1]) >= 2]
     reported_fusion = "../reported_fusions.txt"
     with open(reported_fusion, "w") as file:
-         file.write("ID\tGene Fusion\tsupporting_reads\tchrom1\tbreakpoint1\tchrom2\tbreakpoint2\tKnown\n")  
+         if fusion_scoring!="F":
+             file.write("ID\tGene Fusion\tsupporting_reads\tchrom1\tbreakpoint1\tchrom2\tbreakpoint2\tvoters\tKnown\n") 
+         else:
+             file.write("ID\tGene Fusion\tsupporting_reads\tchrom1\tbreakpoint1\tchrom2\tbreakpoint2\tKnown\n") 
          for idx, item in enumerate(sorted_fusions, start=1):
              gene_fusion = item[0]
              supporting_reads = item[1]
@@ -237,9 +260,14 @@ def main():
              breakpoint1 = round(item[3])
              chrom2 = item[4]
              breakpoint2 = round(item[5])
+             voters=item[6]
              known_status = "yes" if gene_fusion in GFvoter_known_fusion else "" 
              if int(supporting_reads)>=min_sup_read:
-                file.write(f"{idx}\t{gene_fusion}\t{supporting_reads}\t{chrom1}\t{breakpoint1}\t{chrom2}\t{breakpoint2}\t{known_status}\n")   
+                 if fusion_scoring!="F":
+                     file.write(f"{idx}\t{gene_fusion}\t{supporting_reads}\t{chrom1}\t{breakpoint1}\t{chrom2}\t{breakpoint2}\t{voters}\t{known_status}\n")
+                 else:
+                     file.write(f"{idx}\t{gene_fusion}\t{supporting_reads}\t{chrom1}\t{breakpoint1}\t{chrom2}\t{breakpoint2}\t{known_status}\n")
+                        
 
 
 if __name__ == "__main__":
@@ -250,6 +278,7 @@ if __name__ == "__main__":
    output_file=args.output_file
    datatype=args.datatype
    ground_truth=args.ground_truth
+   fusion_scoring=args.fusion_scoring
    GFvoter_path = os.path.abspath(os.path.dirname(__file__))
    if output_file[-1]!='/':
       output_file+='/'

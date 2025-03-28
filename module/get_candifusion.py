@@ -35,7 +35,9 @@ def initialization_parameters():
     parser.add_argument('-sp', action='store', dest='sup_read', type=int, required=False, default=2,
                         help='Indicates the minimum number of supporting reads of each candidate in Scoring process.')                                  
     parser.add_argument('-score', action='store', dest='min_score', type=int, required=False, default=400,
-                        help='Indicates the score threshold set during the scoring process.')          
+                        help='Indicates the score threshold set during the scoring process.')
+    parser.add_argument('-f', action='store', dest='fusion_scoring', type=str, required=False, default="F",
+                        help='output the scoring of each fusion method during the voting process (F or T)')           
     parser.add_argument('-poll', action='store', dest='min_poll', type=int, required=False, default=6,
                         help='Indicates the minimum number of votes for each reported fusion.')
     parser.add_argument('-ground_truth', action='store', dest='ground_truth', type=str, required=False, default="a",
@@ -83,6 +85,32 @@ def run_command(command):
     if result.returncode != 0:
         print(f"command '{command}' failed to execute. Errors:{result.stderr}")
     return result
+
+# def read_to_gene(info_list, time):
+#     elements = info_list.split()
+#     read_chromosome=elements[1]
+#     read_start_pos=int(elements[3])
+#     read_end_pos=int(elements[4])
+#     left_soft=int(elements[5])
+#     right_soft=int(elements[6])
+#     rl=int(elements[10])
+#     a=elements[8]
+#     b=elements[9]
+#     if a =='secondary':
+#         return None
+#     elif time > 1:
+#          with open(gene_list, 'r') as file:
+#               for gene_info in file:
+#                   elements = line.strip().split(', ')
+#                   genex, geney = '', ''
+#                   if gene_info[1]==read_chromosome:
+#                      if read_start_pos >= int(gene_info[2]) and read_end_pos <= int(gene[3]):
+#                         genex=gene[0]
+#                         geney=gene[4]
+#                         return [genex,read_chromosome, read_start_pos, read_end_pos, geney, left_soft,right_soft,rl,a,b]
+#                         break
+#     else:
+#         return None
 
 
 def fusion_record_read_file(align_file):

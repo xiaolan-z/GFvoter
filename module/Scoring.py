@@ -30,7 +30,9 @@ def initialization_parameters():
     parser.add_argument('-sp', action='store', dest='sup_read', type=int, required=False, default=2,
                         help='Indicates the minimum number of supporting reads of each candidate in Scoring process.')                                  
     parser.add_argument('-score', action='store', dest='min_score', type=int, required=False, default=400,
-                        help='Indicates the score threshold set during the scoring process.')          
+                        help='Indicates the score threshold set during the scoring process.')
+    parser.add_argument('-f', action='store', dest='fusion_scoring', type=str, required=False, default="F",
+                        help='output the scoring of each fusion method during the voting process (F or T)')           
     parser.add_argument('-poll', action='store', dest='min_poll', type=int, required=False, default=6,
                         help='Indicates the minimum number of votes for each reported fusion.') 
     parser.add_argument('-ground_truth', action='store', dest='ground_truth', type=str, required=False, default="a",
