@@ -4,7 +4,7 @@
 
 ## Description
 GFvoter is a method that accurately identifies gene fusion from long-read transcriptome sequencing data with multi-voting strategies. The five voters consist of two alignment programs (Minimap2, Winnowmap), two existing gene fusion detection methods (LongGF, JAFFAL) and a custom scoring mechanism. Both in real and simulated data, GFvoter performs very well overall among fusion detection tools.
-The input should be a fastq.gz file (PacBio Iso-Seq, Nanopore, or mixed platform). The output is a list of confident gene fusions. By default, FusionSeeker uses hg38.fa and gencode.v22.chr_patch_hapl_scaff.annotation.gtf as reference.
+The input should be a fastq.gz file (PacBio Iso-Seq, Nanopore, or mixed platform). The output is a list of confident gene fusions. By default, GFvoter uses hg38.fa and gencode.v22.chr_patch_hapl_scaff.annotation.gtf as reference.
 
 
 ## Installation
