@@ -205,6 +205,8 @@ fusion_records2="fusion_records2"
 if __name__ == "__main__":
 
     run_command(f"chmod +x {GFvoter_path}/get_alignment_info")
+    run_command(f"chmod +x {GFvoter_path}/read2gene")
+    run_command(f"chmod +x {GFvoter_path}/mergeAndsort")
 
     align_file1="alignment.info1"
     align_file2="alignment.info2"
